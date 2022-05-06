@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:valorant_tips/constants/app_colors.dart';
 import 'package:valorant_tips/screens/main_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,7 +10,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Valo Guide',
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      home: const MainScreen(),
+      theme: AppTheme().valoTheme,
     );
   }
 }
