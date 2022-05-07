@@ -6,6 +6,9 @@ const grey = Color(0xFF787878);
 
 class AppTheme {
   final valoTheme = ThemeData(
-      scaffoldBackgroundColor: black,
-      appBarTheme: AppBarTheme(backgroundColor: black));
+    scaffoldBackgroundColor: black,
+    appBarTheme: AppBarTheme(backgroundColor: black),
+    bottomNavigationBarTheme:
+        BottomNavigationBarThemeData(backgroundColor: black),
+  );
 }

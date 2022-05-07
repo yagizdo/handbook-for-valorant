@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
@@ -29,16 +30,31 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     return Scaffold(
       bottomNavigationBar: PersistentTabView(
         context,
+        navBarStyle: NavBarStyle.style9,
+        backgroundColor:
+            Theme.of(context).bottomNavigationBarTheme.backgroundColor!,
         screens: tabs,
         items: [
           PersistentBottomNavBarItem(
-              icon: const Icon(Icons.home), title: 'Agents'),
+              activeColorPrimary: CupertinoColors.white,
+              inactiveColorPrimary: CupertinoColors.inactiveGray,
+              icon: const Icon(Icons.home),
+              title: 'Agents'),
           PersistentBottomNavBarItem(
-              icon: const Icon(Icons.home), title: 'Maps'),
+              activeColorPrimary: CupertinoColors.white,
+              inactiveColorPrimary: CupertinoColors.inactiveGray,
+              icon: const Icon(Icons.home),
+              title: 'Maps'),
           PersistentBottomNavBarItem(
-              icon: const Icon(Icons.home), title: 'Ranks'),
+              activeColorPrimary: CupertinoColors.white,
+              inactiveColorPrimary: CupertinoColors.inactiveGray,
+              icon: const Icon(Icons.home),
+              title: 'Ranks'),
           PersistentBottomNavBarItem(
-              icon: const Icon(Icons.home), title: 'Others'),
+              activeColorPrimary: CupertinoColors.white,
+              inactiveColorPrimary: CupertinoColors.inactiveGray,
+              icon: const Icon(Icons.home),
+              title: 'Others'),
         ],
       ),
     );
