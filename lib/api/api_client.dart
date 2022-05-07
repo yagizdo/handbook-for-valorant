@@ -1,21 +1,36 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:valorant_tips/models/agents.dart';
+import 'package:valorant_tips/models/agent.dart';
 
-class ApiClient{
-Dio _dio = Dio();
+class ApiClient {
+  final Dio _dio = Dio();
 
-final String _baseUrl = 'https://valorant-api.com/';
+  final String _baseUrl = 'https://valorant-api.com/';
 
-Future<Agents> getAgents() async {
-  Response agentData = await _dio.get(_baseUrl + 'v1/agents/');
+  Future<Iterable<Agent>> getAgents() async {
+    Iterable<Agent> agents = [];
 
+    try {
+      Response response = await _dio.get("${_baseUrl}v1/agents");
 
-  Agents agents = Agents.fromJson(agentData.data);
+      List parsedList = response.data['data'];
+      agents = parsedList.map((element) {
+        return Agent.fromJson(element);
+      });
 
-  print('User info : ${agents.data.displayName}');
-  print('User info : ${agents.data.role}');
-
-  return agents;
-}
+    } on DioError catch (e) {
+      if (e.response != null) {
+        print('STATUS: ${e.response?.statusCode}');
+        print('DATA: ${e.response?.data}');
+        print('HEADERS: ${e.response?.headers}');
+      } else {
+        // Error due to setting up or sending the request
+        print('Error sending request!');
+        print(e.message);
+      }
+    }
+    return agents;
+  }
 }

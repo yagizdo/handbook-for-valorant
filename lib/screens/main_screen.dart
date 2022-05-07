@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:valorant_tips/api/api_client.dart';
 import 'package:valorant_tips/screens/agents_screen.dart';
 import 'package:valorant_tips/screens/maps_screen.dart';
 import 'package:valorant_tips/screens/others_screen.dart';
