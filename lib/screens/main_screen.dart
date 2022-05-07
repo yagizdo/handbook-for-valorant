@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -8,23 +9,38 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
-  List<Tab> tabs = [
-    Tab(
-      text: 'Agents',
+  List<Widget> tabs = [
+    const Text(
+      'Agents',
     ),
-    Tab(
-      text: 'Ranks',
+    const Text(
+      'Ranks',
     ),
-    Tab(
-      text: 'Maps',
+    const Text(
+      'Maps',
     ),
-    Tab(
-      text: 'Others',
+    const Text(
+      'Others',
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      bottomNavigationBar: PersistentTabView(
+        context,
+        screens: tabs,
+        items: [
+          PersistentBottomNavBarItem(
+              icon: const Icon(Icons.home), title: 'Agents'),
+          PersistentBottomNavBarItem(
+              icon: const Icon(Icons.home), title: 'Maps'),
+          PersistentBottomNavBarItem(
+              icon: const Icon(Icons.home), title: 'Ranks'),
+          PersistentBottomNavBarItem(
+              icon: const Icon(Icons.home), title: 'Others'),
+        ],
+      ),
+    );
   }
 }
