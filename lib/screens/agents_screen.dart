@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
+import 'package:valorant_tips/network/agent_client.dart';
 
 import '../models/agent.dart';
 import '../network/api_client.dart';
@@ -13,12 +14,14 @@ class AgentsScreen extends StatefulWidget {
 }
 
 class _AgentsScreenState extends State<AgentsScreen> {
-  ApiClient client = ApiClient();
+  // Agent Client
+  AgentClient _agentClient = AgentClient();
+  // Agents List
   late Future<Iterable<Agent>> agents;
 
   @override
   void initState() {
-    agents = client.getAgents();
+    agents = _agentClient.getAgents();
     super.initState();
   }
 
