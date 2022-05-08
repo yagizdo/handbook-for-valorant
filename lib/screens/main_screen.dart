@@ -32,22 +32,22 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
         screens: tabs,
         items: [
           PersistentBottomNavBarItem(
-              activeColorPrimary: CupertinoColors.white,
+              activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               icon: const Icon(Icons.home),
               title: 'Agents'),
           PersistentBottomNavBarItem(
-              activeColorPrimary: CupertinoColors.white,
+              activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               icon: const Icon(Icons.home),
               title: 'Maps'),
           PersistentBottomNavBarItem(
-              activeColorPrimary: CupertinoColors.white,
+              activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               icon: const Icon(Icons.home),
               title: 'Ranks'),
           PersistentBottomNavBarItem(
-              activeColorPrimary: CupertinoColors.white,
+              activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               icon: const Icon(Icons.home),
               title: 'Others'),
