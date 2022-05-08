@@ -4,11 +4,14 @@ import 'package:valorant_tips/network/api_client.dart';
 import '../models/agent.dart';
 
 class AgentClient extends ApiClient {
+  // Get Agents
   Future<Iterable<Agent>> getAgents() async {
     Iterable<Agent> agents = [];
     try {
-      Response response = await super.dio.get("${super.baseUrl}v1/agents");
+      // Get response
+      Response response = await super.dio.get("${super.baseUrl}v1/agents", queryParameters: {'isPlayableCharacter': true});
 
+      // Parsed list bunu mapleyip her ajani tek tek agents listesine atiyoruz
       List parsedList = response.data['data'];
       agents = parsedList.map((element) {
         return Agent.fromJson(element);
