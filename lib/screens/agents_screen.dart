@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
 
-import '../api/api_client.dart';
 import '../models/agent.dart';
+import '../network/api_client.dart';
 
 class AgentsScreen extends StatefulWidget {
   const AgentsScreen({Key? key}) : super(key: key);
