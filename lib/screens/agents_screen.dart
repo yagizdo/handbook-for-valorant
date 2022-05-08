@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
+import 'package:valorant_tips/constants/app_colors.dart';
 
 import '../api/api_client.dart';
 import '../models/agent.dart';
@@ -36,14 +37,22 @@ class _AgentsScreenState extends State<AgentsScreen> {
               if (snapshot.hasError) {
                 return const Text('Error');
               } else if (snapshot.hasData) {
-                return GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, childAspectRatio: 2 / 2),
-                  itemCount: snapshot.data?.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    var data = snapshot.data!.toList();
-                    return Text(data[index].displayName!);
-                  },
+                return Padding(
+                  padding: const EdgeInsets.only(top: 50.0),
+                  child: GridView.builder(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2, childAspectRatio: 2 / 2),
+                    itemCount: snapshot.data?.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      var data = snapshot.data!.toList();
+                      return Column(
+                        children: [
+                          Image.network(data[index].displayIcon ?? data[index].displayIcon!,width: 150,),
+                          Text(data[index].displayName!,style: TextStyle(color: white),),
+                        ],
+                      );
+                    },
+                  ),
                 );
               } else {
                 return const Text('Empty data');
