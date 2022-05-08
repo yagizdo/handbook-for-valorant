@@ -1,15 +1,66 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
+import 'package:valorant_tips/constants/app_colors.dart';
 
-class AgentsScreen extends StatelessWidget {
+import '../api/api_client.dart';
+import '../models/agent.dart';
+
+class AgentsScreen extends StatefulWidget {
   const AgentsScreen({Key? key}) : super(key: key);
+
+  @override
+  State<AgentsScreen> createState() => _AgentsScreenState();
+}
+
+class _AgentsScreenState extends State<AgentsScreen> {
+  ApiClient client = ApiClient();
+  late Future<Iterable<Agent>> agents;
+
+  @override
+  void initState() {
+    agents = client.getAgents();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: Center(
-      child: Text('Agenst'),
-    )));
+        body: FutureBuilder<Iterable<Agent>>(
+          future: agents,
+          builder: (
+            BuildContext context,
+            AsyncSnapshot<Iterable<Agent>> snapshot,
+          ) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return CircularProgressIndicator();
+            } else if (snapshot.connectionState == ConnectionState.done) {
+              if (snapshot.hasError) {
+                return const Text('Error');
+              } else if (snapshot.hasData) {
+                return Padding(
+                  padding: const EdgeInsets.only(top: 50.0),
+                  child: GridView.builder(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2, childAspectRatio: 2 / 2),
+                    itemCount: snapshot.data?.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      var data = snapshot.data!.toList();
+                      return Column(
+                        children: [
+                          Image.network(data[index].displayIcon ?? data[index].displayIcon!,width: 150,),
+                          Text(data[index].displayName!,style: TextStyle(color: white),),
+                        ],
+                      );
+                    },
+                  ),
+                );
+              } else {
+                return const Text('Empty data');
+              }
+            } else {
+              return Text('State: ${snapshot.connectionState}');
+            }
+          },
+        ));
   }
 }
