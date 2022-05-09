@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
+import 'package:valorant_tips/widgets/agents_screen/abilities_card.dart';
 
 import '../../models/agent.dart';
 
@@ -18,7 +19,6 @@ class _AgentsDetailState extends State<AgentsDetail> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-
     // Agent Abilities
     List<Abilities> agentAbilities = [];
 
@@ -58,12 +58,12 @@ class _AgentsDetailState extends State<AgentsDetail> {
                           CircleAvatar(
                             backgroundColor: black,
                             backgroundImage:
-                            NetworkImage(widget.agent.role!.displayIcon!),
+                                NetworkImage(widget.agent.role!.displayIcon!),
                           ),
                           CircleAvatar(
                             backgroundColor: black,
                             backgroundImage:
-                            NetworkImage(widget.agent.displayIcon!),
+                                NetworkImage(widget.agent.displayIcon!),
                           ),
                         ],
                       ),
@@ -79,22 +79,16 @@ class _AgentsDetailState extends State<AgentsDetail> {
                     itemCount: agentAbilities.length,
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedIndex = index;
-                          });
-                        },
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: agentAbilities.length == 5 /*for jett cause shes have 5 abilities */ ? 11.5.w : 20.w),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.network(
-                              agentAbilities[index].displayIcon!,
-                              width: 50.w,
-                            ),
-                          ),
-                        ),
-                      );
+                          onTap: () {
+                            setState(() {
+                              selectedIndex = index;
+                            });
+                          },
+                          child: AbilitiesCard(
+                            agentAbilities: agentAbilities[index],
+                            abilitiesLenght: agentAbilities.length,
+                            selected: selectedIndex == index ? true : false,
+                          ));
                     },
                   ),
                 ),
@@ -103,7 +97,7 @@ class _AgentsDetailState extends State<AgentsDetail> {
                   child: GestureDetector(
                     onHorizontalDragEnd: (dragEndDetails) {
                       if (dragEndDetails.primaryVelocity! < 0) {
-                       // Swipe Left //
+                        // Swipe Left //
 
                         // Abilities lenght = 4 fakat sacma bir bug oldugundan bir eksigine
                         // esitledim suanlik boyle sorun yok gibi
@@ -116,22 +110,35 @@ class _AgentsDetailState extends State<AgentsDetail> {
                         // Swipe Right //
                         selectedIndex < widget.agent.abilities!.length
                             ? setState(() {
-                          selectedIndex !=0 ? selectedIndex -= 1 : selectedIndex = selectedIndex;
-                        })
+                                selectedIndex != 0
+                                    ? selectedIndex -= 1
+                                    : selectedIndex = selectedIndex;
+                              })
                             : print('abilities index error');
                       }
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                          color:
-                              CupertinoColors.tertiarySystemGroupedBackground,
+                          gradient: const LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              CupertinoColors.destructiveRed,
+                              CupertinoColors.systemYellow,
+                            ],
+                          ),
                           borderRadius: BorderRadius.circular(10)),
                       alignment: Alignment.topLeft,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(agentAbilities[selectedIndex].displayName!)
-                        ],
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 20.w, vertical: 10.h),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Abilities.'),
+                            Text(agentAbilities[selectedIndex].displayName!)
+                          ],
+                        ),
                       ),
                     ),
                   ),
