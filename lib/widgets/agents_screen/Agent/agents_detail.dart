@@ -30,12 +30,16 @@ class _AgentsDetailState extends State<AgentsDetail> {
 
     // Scaffold
     return SafeArea(
-      minimum: const EdgeInsets.only(top: 30),
+      minimum: EdgeInsets.only(top: 25.h),
       child: Scaffold(
+        appBar: AppBar(),
         body: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AgentInfo(agent: widget.agent,),
+              AgentInfo(
+                agent: widget.agent,
+              ),
               AbiliityList(abilityList: agentAbilities),
             ],
           ),
