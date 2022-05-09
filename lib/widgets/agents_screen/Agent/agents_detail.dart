@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
+import 'package:valorant_tips/widgets/agents_screen/Ability/abiliity_list.dart';
 import 'package:valorant_tips/widgets/agents_screen/Ability/abilities_card.dart';
 
 import '../../../models/agent.dart';
@@ -29,7 +30,13 @@ class _AgentsDetailState extends State<AgentsDetail> {
     // Scaffold
     return SafeArea(
       minimum: const EdgeInsets.only(top: 30),
-      child: Scaffold(),
+      child: Scaffold(
+        body: Column(
+          children: [
+            AbiliityList(abilityList: agentAbilities),
+          ],
+        ),
+      ),
     );
   }
 }
