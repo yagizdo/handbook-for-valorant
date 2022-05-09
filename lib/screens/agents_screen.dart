@@ -38,7 +38,7 @@ class _AgentsScreenState extends State<AgentsScreen> {
           children: [
             Padding(
               padding: EdgeInsets.only(top: 40.h,left: 13.w),
-              child: const Text('Choose Your \nAgent',style: TextStyle(color: white,fontSize: 30),textAlign: TextAlign.start,),
+              child: const Text('Agents',style: TextStyle(color: white,fontSize: 30,fontFamily: 'Valorant'),textAlign: TextAlign.start,),
             ),
             Expanded(
               child: FutureBuilder<Iterable<Agent>>(
