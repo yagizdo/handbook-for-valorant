@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
@@ -29,10 +30,9 @@ class AgentsCard extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Image.network(
-            agent.fullPortraitV2!,
+          child: CachedNetworkImage(
+            imageUrl: agent.fullPortraitV2!,
             fit: BoxFit.cover,
-            cacheHeight: 200,
           ),
         ),
       ),
