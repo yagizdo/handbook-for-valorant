@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
 import 'package:valorant_tips/models/agent.dart';
-import 'package:valorant_tips/widgets/agents_screen/agents_detail.dart';
+import 'package:valorant_tips/widgets/agents_screen/Agent/agents_detail.dart';
 
 class AgentsCard extends StatelessWidget {
   AgentsCard({Key? key, required this.agent}) : super(key: key);

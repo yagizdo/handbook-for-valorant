@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
-import 'package:valorant_tips/widgets/agents_screen/abilities_card.dart';
+import 'package:valorant_tips/widgets/agents_screen/Ability/abilities_card.dart';
 
-import '../../models/agent.dart';
+import '../../../models/agent.dart';
 
 class AgentsDetail extends StatefulWidget {
   AgentsDetail({Key? key, required this.agent}) : super(key: key);
