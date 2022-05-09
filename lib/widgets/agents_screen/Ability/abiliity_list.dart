@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
@@ -47,7 +48,55 @@ class _AbiliityListState extends State<AbiliityList> {
 
           // For top padding
           SizedBox(height: 10.h,),
-          AbilityInfoCard(ability: widget.abilityList[selectedIndex],),
+      Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        child: GestureDetector(
+          onHorizontalDragEnd: (dragEndDetails) {
+            if (dragEndDetails.primaryVelocity! < 0) {
+              // Swipe Left //
+
+              // Abilities lenght = 4 fakat sacma bir bug oldugundan bir eksigine
+              // esitledim suanlik boyle sorun yok gibi
+              selectedIndex < widget.abilityList.length - 1
+                  ? setState(() {
+                selectedIndex += 1;
+              })
+                  : print('abilities index error');
+            } else if (dragEndDetails.primaryVelocity! > 0) {
+              // Swipe Right //
+              selectedIndex < widget.abilityList.length
+                  ? setState(() {
+                selectedIndex != 0
+                    ? selectedIndex -= 1
+                    : selectedIndex = selectedIndex;
+              })
+                  : print('abilities index error');
+            }
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                color: CupertinoColors.systemGrey,
+                borderRadius: BorderRadius.circular(10)
+            ),
+            width: 1.sw,
+            height: 0.25.sh,
+            //padding: EdgeInsets.symmetric(horizontal: 10.w),
+            child: Padding(
+              padding: EdgeInsets.only(top: 20.h,left: 10.w,right: 10.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Ability name and ability button
+                  Text('${
+                      widget.abilityList[selectedIndex].slot! == 'Ability1' ? 'Q -' : widget.abilityList[selectedIndex].slot == 'Ability2' ? 'E -' : widget.abilityList[selectedIndex].slot == 'Grenade'  ? 'C -': 'X -'} ' + widget.abilityList[selectedIndex].displayName!,style: TextStyle(fontSize: 16.sp),),
+                  SizedBox(height: 10.h,),
+                  Text(widget.abilityList[selectedIndex].description!,textAlign: TextAlign.start,style: TextStyle(fontSize: 14.sp),),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
         ],
       ),
     );

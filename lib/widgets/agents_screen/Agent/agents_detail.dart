@@ -32,7 +32,7 @@ class _AgentsDetailState extends State<AgentsDetail> {
     return SafeArea(
       minimum: EdgeInsets.only(top: 25.h),
       child: Scaffold(
-        appBar: AppBar(toolbarHeight: 38.h,),
+        appBar: AppBar(toolbarHeight: 45.h,),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
