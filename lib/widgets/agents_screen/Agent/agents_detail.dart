@@ -6,6 +6,7 @@ import 'package:valorant_tips/widgets/agents_screen/Ability/abiliity_list.dart';
 import 'package:valorant_tips/widgets/agents_screen/Ability/abilities_card.dart';
 
 import '../../../models/agent.dart';
+import 'agent_info.dart';
 
 class AgentsDetail extends StatefulWidget {
   AgentsDetail({Key? key, required this.agent}) : super(key: key);
@@ -31,10 +32,13 @@ class _AgentsDetailState extends State<AgentsDetail> {
     return SafeArea(
       minimum: const EdgeInsets.only(top: 30),
       child: Scaffold(
-        body: Column(
-          children: [
-            AbiliityList(abilityList: agentAbilities),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              AgentInfo(agent: widget.agent,),
+              AbiliityList(abilityList: agentAbilities),
+            ],
+          ),
         ),
       ),
     );

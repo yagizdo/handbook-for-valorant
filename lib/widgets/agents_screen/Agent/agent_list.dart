@@ -20,7 +20,7 @@ class AgentList extends StatelessWidget {
           child: GridView.builder(
             scrollDirection: Axis.vertical,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,childAspectRatio: 2/3),
+                crossAxisCount: 2,childAspectRatio: 1/1),
             itemCount: snapshot.data?.length,
             itemBuilder: (BuildContext context, int index) {
               var data = snapshot.data!.toList();

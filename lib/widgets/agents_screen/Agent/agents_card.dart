@@ -29,12 +29,9 @@ class AgentsCard extends StatelessWidget {
               colors: agentColors,
             )
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CachedNetworkImage(
-            imageUrl: agent.fullPortraitV2!,
-            fit: BoxFit.cover,
-          ),
+        child: CachedNetworkImage(
+          imageUrl: agent.displayIcon!,
+          fit: BoxFit.cover,
         ),
       ),
     );
