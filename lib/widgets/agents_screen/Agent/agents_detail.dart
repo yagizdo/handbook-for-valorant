@@ -16,7 +16,6 @@ class AgentsDetail extends StatefulWidget {
 }
 
 class _AgentsDetailState extends State<AgentsDetail> {
-  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     // Agent Abilities
