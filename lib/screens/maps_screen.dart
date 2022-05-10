@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/models/map.dart';
 import 'package:valorant_tips/network/maps_client.dart';
+import 'package:valorant_tips/widgets/maps_screen/maps_card.dart';
+import 'package:valorant_tips/widgets/maps_screen/maps_list.dart';
+
+import '../constants/app_colors.dart';
 
 class MapsScreen extends StatefulWidget {
   const MapsScreen({Key? key}) : super(key: key);
@@ -18,13 +23,33 @@ class _MapsScreenState extends State<MapsScreen> {
     maps = mapsClient.getlAllMaps();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Center(
-        child: Text('Maps'),
-      )),
-    );
+        body: SafeArea(
+           minimum: EdgeInsets.only(top: 40.h),
+          child: Padding(
+            padding: EdgeInsets.only(left: 10.w,right: 10.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('Maps',style: TextStyle(color: white,fontFamily: 'Valorant',fontSize: 20.sp),),
+            SizedBox(height: 10.h,),
+            Expanded(
+              child: FutureBuilder<Iterable<Maps>>(
+                future: maps,
+                  builder: (
+                BuildContext context,
+                AsyncSnapshot<Iterable<Maps>> snapshot,
+              ) {
+                   return MapsList(snapshot: snapshot);
+                  }
+                  )
+            )
+      ],
+    ),
+          ),
+        ));
   }
 }
