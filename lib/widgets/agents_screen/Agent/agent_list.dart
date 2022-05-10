@@ -20,7 +20,7 @@ class AgentList extends StatelessWidget {
           child: GridView.builder(
             scrollDirection: Axis.vertical,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,childAspectRatio: 1/1),
+                crossAxisCount: 2,childAspectRatio: 2/2.4),
             itemCount: snapshot.data?.length,
             itemBuilder: (BuildContext context, int index) {
               var data = snapshot.data!.toList();
@@ -31,7 +31,7 @@ class AgentList extends StatelessWidget {
               // Agent Card
               return Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5.w,vertical: 5.h),
-                child: AgentsCard(agent: data[index],),
+                child: AgentsCard(agent: data[index],index: index,),
               );
             },
           ),
