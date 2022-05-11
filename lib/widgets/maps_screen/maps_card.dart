@@ -13,7 +13,7 @@ class MapsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => MapsDetail()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => MapsDetail(mapInfo: map,)));
       },
       child: Stack(
         alignment: Alignment.center,
