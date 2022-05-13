@@ -15,21 +15,33 @@ class MapsDetail extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 50.h,
-          title: Text(
-            mapInfo.displayName!,
-            style: TextStyle(fontSize: 20.sp),
-          ),
-          centerTitle: true,
         ),
         body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(mapInfo.displayName!,style: TextStyle(color: white,fontFamily: 'Valorant',fontSize: 30.sp),),
+            ),
+            Container(
+              width: 1.sw,
+              height: 0.255.sh,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: DecorationImage(image: CachedNetworkImageProvider(mapInfo.splash!))
+              )
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 10.h,top: 20.h),
+              child: Text('Minimap',style: TextStyle(color: white,fontFamily: 'Valorant',fontSize: 30.sp),),
+            ),
             Container(
               alignment: Alignment.center,
                 child: mapInfo.displayIcon == null ? Text('No Minimap data',style: TextStyle(color: white,fontSize: 30.sp)) : CachedNetworkImage(
               imageUrl: mapInfo.displayIcon!,
               height: 300.w,
-            ),),
+            ),
+            ),
           ],
         ),
       ),
