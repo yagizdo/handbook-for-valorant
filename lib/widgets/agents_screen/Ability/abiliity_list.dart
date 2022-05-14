@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
 import 'package:valorant_tips/models/agent.dart';
 import 'package:valorant_tips/widgets/agents_screen/Ability/abilities_card.dart';
-import 'package:valorant_tips/widgets/agents_screen/Ability/ability_info_card.dart';
 
 class AbiliityList extends StatefulWidget {
   AbiliityList({Key? key, required this.abilityList}) : super(key: key);

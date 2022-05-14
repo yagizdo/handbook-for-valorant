@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -61,7 +59,10 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
               activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               activeColorSecondary: Colors.white,
-              icon: Image.asset('lib/constants/icons/weapons_icon.png',width: 30.w,),
+              icon: Image.asset(
+                'lib/constants/icons/weapons_icon.png',
+                width: 30.w,
+              ),
               title: 'Weapons'),
 
           // Ranks
@@ -74,7 +75,8 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                 radius: 9.w,
                 child: CircleAvatar(
                   backgroundColor: white,
-                  backgroundImage: AssetImage('lib/constants/icons/rank_icon.png'),
+                  backgroundImage:
+                      const AssetImage('lib/constants/icons/rank_icon.png'),
                   radius: 8.w,
                 ),
               ),

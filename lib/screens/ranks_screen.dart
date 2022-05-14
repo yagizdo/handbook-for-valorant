@@ -1,7 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
 import 'package:valorant_tips/network/rank_client.dart';
 import 'package:valorant_tips/widgets/rank_screen/ranks_list.dart';

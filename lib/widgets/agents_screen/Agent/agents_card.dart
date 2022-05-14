@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
@@ -23,104 +22,129 @@ class AgentsCard extends StatelessWidget {
       ],
       // Breach
       [
-        Color(0xFFBC542D),
-        Color(0xFF58394D),
-        Color(0xFFA06C45),
-        Color(0xFF50785D)
+        const Color(0xFFBC542D),
+        const Color(0xFF58394D),
+        const Color(0xFFA06C45),
+        const Color(0xFF50785D)
       ],
       // Raze
       [
-        Color(0xFFe36230),
-        Color(0xFFd89e4f),
-        Color(0xFF2c4446),
+        const Color(0xFFe36230),
+        const Color(0xFFd89e4f),
+        const Color(0xFF2c4446),
       ],
       // Chamber
       [
-        Color(0xFF30aae1),
-        Color(0xFFc83d7b),
-        Color(0xFF947961),
-        Color(0xFFffce6f)
+        const Color(0xFF30aae1),
+        const Color(0xFFc83d7b),
+        const Color(0xFF947961),
+        const Color(0xFFffce6f)
       ],
       // Kay/o
       [
-        Color(0xFF2bc8ff),
-        Color(0xFF4343b2),
-        Color(0xFF905ef6),
-        Color(0xFFff89ff)
+        const Color(0xFF2bc8ff),
+        const Color(0xFF4343b2),
+        const Color(0xFF905ef6),
+        const Color(0xFFff89ff)
       ],
       // Skye
       [
-        Color(0xFF8ea36f),
-        Color(0xFF364241),
-        Color(0xFFae8e4d),
-        Color(0xFFaf694d)
+        const Color(0xFF8ea36f),
+        const Color(0xFF364241),
+        const Color(0xFFae8e4d),
+        const Color(0xFFaf694d)
       ],
       // Cypher
       [
-        Color(0xFFd18a5b),
-        Color(0xFF6097df),
-        Color(0xFF48486c),
-        Color(0xFF4b76cc)
+        const Color(0xFFd18a5b),
+        const Color(0xFF6097df),
+        const Color(0xFF48486c),
+        const Color(0xFF4b76cc)
       ],
       // Sova
       [
-        Color(0xFFebccae),
-        Color(0xFF2947c3),
-        Color(0xFF997b58),
-        Color(0xFF567fb5)
+        const Color(0xFFebccae),
+        const Color(0xFF2947c3),
+        const Color(0xFF997b58),
+        const Color(0xFF567fb5)
       ],
       // Killjoy
       [
-        Color(0xFFe6d759),
-        Color(0xFF58956a),
-        Color(0xFFdd8df8),
-        Color(0xFFf3ab3d)
+        const Color(0xFFe6d759),
+        const Color(0xFF58956a),
+        const Color(0xFFdd8df8),
+        const Color(0xFFf3ab3d)
       ],
       // Viper
       [
-        Color(0xFF51af58),
-        Color(0xFF6b8690),
-        Color(0xFFa5ae60),
-        Color(0xFFdef2ac)
+        const Color(0xFF51af58),
+        const Color(0xFF6b8690),
+        const Color(0xFFa5ae60),
+        const Color(0xFFdef2ac)
       ],
       // Phoneix
       [
-        Color(0xFFf7bf60),
-        Color(0xFFea6d4e),
-        Color(0xFF838ea6),
-        Color(0xFF7c5b60)
+        const Color(0xFFf7bf60),
+        const Color(0xFFea6d4e),
+        const Color(0xFF838ea6),
+        const Color(0xFF7c5b60)
       ],
       // Astra
       [
-        Color(0xFFef90af),
-        Color(0xFF4e26c9),
-        Color(0xFF7aa1e8),
-        Color(0xFFb0ae84)
+        const Color(0xFFef90af),
+        const Color(0xFF4e26c9),
+        const Color(0xFF7aa1e8),
+        const Color(0xFFb0ae84)
       ],
       // Brimstone
       [
-        Color(0xFFb35723),
-        Color(0xFF8b81aa),
-        Color(0xFF5f1c0a),
-        Color(0xFFeb953f)
+        const Color(0xFFb35723),
+        const Color(0xFF8b81aa),
+        const Color(0xFF5f1c0a),
+        const Color(0xFFeb953f)
       ],
       // Neon
       [
-        Color(0xFF00008b),
-        Color(0xFF00FFFF),
-        Color(0xFF00ffff),
-        Color(0xFF00008b)
+        const Color(0xFF00008b),
+        const Color(0xFF00FFFF),
+        const Color(0xFF00ffff),
+        const Color(0xFF00008b)
       ],
       // Yoru
-      [Color(0xFFe18437), Color(0xFF99412a), Color(0xFF394278), Color(0xFF0024f5)],
+      [
+        const Color(0xFFe18437),
+        const Color(0xFF99412a),
+        const Color(0xFF394278),
+        const Color(0xFF0024f5)
+      ],
       // Sage
-      [Color(0xFF9254b8), Color(0xFF67abdd), Color(0xFF66357e), Color(0xFF78fad8)],
+      [
+        const Color(0xFF9254b8),
+        const Color(0xFF67abdd),
+        const Color(0xFF66357e),
+        const Color(0xFF78fad8)
+      ],
       // Reyna
-      [Color(0xFFce53a8), Color(0xFF2f2664), Color(0xFF383b3d), Color(0xFFe46c76)],
+      [
+        const Color(0xFFce53a8),
+        const Color(0xFF2f2664),
+        const Color(0xFF383b3d),
+        const Color(0xFFe46c76)
+      ],
       // Omen
-      [Color(0xFF7c7fb4), Color(0xFF3e3c56), Color(0xFF4a5fa4), Color(0xFF59bbc5)],
+      [
+        const Color(0xFF7c7fb4),
+        const Color(0xFF3e3c56),
+        const Color(0xFF4a5fa4),
+        const Color(0xFF59bbc5)
+      ],
       // Jett
-      [Color(0xFF9edaf6), Color(0xFF5266aa), Color(0xFF2b577c), Color(0xFF90fcfd)],
+      [
+        const Color(0xFF9edaf6),
+        const Color(0xFF5266aa),
+        const Color(0xFF2b577c),
+        const Color(0xFF90fcfd)
+      ],
     ];
     return GestureDetector(
       onTap: () {

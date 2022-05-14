@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/models/map.dart';
 import 'package:valorant_tips/network/maps_client.dart';
-import 'package:valorant_tips/widgets/maps_screen/maps_card.dart';
 import 'package:valorant_tips/widgets/maps_screen/maps_list.dart';
 
 import '../constants/app_colors.dart';

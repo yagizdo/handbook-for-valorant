@@ -24,9 +24,6 @@ class AgentList extends StatelessWidget {
             itemCount: snapshot.data?.length,
             itemBuilder: (BuildContext context, int index) {
               var data = snapshot.data!.toList();
-              var abilitiesList = data[index].abilities;
-              //late String? abilitiesName;
-              //abilitiesList!.forEach((element) { print('value : ${element.displayName}'); abilitiesName = element.slot; });
 
               // Agent Card
               return Padding(

@@ -25,6 +25,6 @@ class MapsList extends StatelessWidget {
       }
     } else {
       return Text('State: ${snapshot.connectionState}');
-    };
+    }
   }
 }

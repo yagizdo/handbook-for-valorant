@@ -32,23 +32,23 @@ class Maps {
     if (json['callouts'] != null) {
       callouts = <Callouts>[];
       json['callouts'].forEach((v) {
-        callouts!.add(new Callouts.fromJson(v));
+        callouts!.add(Callouts.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['uuid'] = this.uuid;
-    data['displayName'] = this.displayName;
-    data['coordinates'] = this.coordinates;
-    data['displayIcon'] = this.displayIcon;
-    data['listViewIcon'] = this.listViewIcon;
-    data['splash'] = this.splash;
-    data['assetPath'] = this.assetPath;
-    data['mapUrl'] = this.mapUrl;
-    if (this.callouts != null) {
-      data['callouts'] = this.callouts!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['uuid'] = uuid;
+    data['displayName'] = displayName;
+    data['coordinates'] = coordinates;
+    data['displayIcon'] = displayIcon;
+    data['listViewIcon'] = listViewIcon;
+    data['splash'] = splash;
+    data['assetPath'] = assetPath;
+    data['mapUrl'] = mapUrl;
+    if (callouts != null) {
+      data['callouts'] = callouts!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -65,16 +65,16 @@ class Callouts {
     regionName = json['regionName'];
     superRegionName = json['superRegionName'];
     location = json['location'] != null
-        ? new Location.fromJson(json['location'])
+        ? Location.fromJson(json['location'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['regionName'] = this.regionName;
-    data['superRegionName'] = this.superRegionName;
-    if (this.location != null) {
-      data['location'] = this.location!.toJson();
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['regionName'] = regionName;
+    data['superRegionName'] = superRegionName;
+    if (location != null) {
+      data['location'] = location!.toJson();
     }
     return data;
   }
@@ -92,9 +92,9 @@ class Location {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['x'] = this.x;
-    data['y'] = this.y;
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['x'] = x;
+    data['y'] = y;
     return data;
   }
 }

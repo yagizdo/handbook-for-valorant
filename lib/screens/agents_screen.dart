@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
 import 'package:valorant_tips/network/agent_client.dart';
 import 'package:valorant_tips/widgets/agents_screen/Agent/agent_list.dart';
-import 'package:valorant_tips/widgets/agents_screen/Agent/agents_card.dart';
+
 
 import '../models/agent.dart';
-import '../network/api_client.dart';
+
 
 class AgentsScreen extends StatefulWidget {
   const AgentsScreen({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class AgentsScreen extends StatefulWidget {
 
 class _AgentsScreenState extends State<AgentsScreen> {
   // Agent Client
-  AgentClient _agentClient = AgentClient();
+  final AgentClient _agentClient = AgentClient();
   // Agents List
   late Future<Iterable<Agent>> agents;
 

@@ -19,13 +19,13 @@ class Rank {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['uuid'] = this.uuid;
-    data['assetObjectName'] = this.assetObjectName;
-    if (this.tiers != null) {
-      data['tiers'] = this.tiers!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['uuid'] = uuid;
+    data['assetObjectName'] = assetObjectName;
+    if (tiers != null) {
+      data['tiers'] = tiers!.map((v) => v.toJson()).toList();
     }
-    data['assetPath'] = this.assetPath;
+    data['assetPath'] = assetPath;
     return data;
   }
 }
@@ -68,17 +68,17 @@ class Tiers {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['tier'] = this.tier;
-    data['tierName'] = this.tierName;
-    data['division'] = this.division;
-    data['divisionName'] = this.divisionName;
-    data['color'] = this.color;
-    data['backgroundColor'] = this.backgroundColor;
-    data['smallIcon'] = this.smallIcon;
-    data['largeIcon'] = this.largeIcon;
-    data['rankTriangleDownIcon'] = this.rankTriangleDownIcon;
-    data['rankTriangleUpIcon'] = this.rankTriangleUpIcon;
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['tier'] = tier;
+    data['tierName'] = tierName;
+    data['division'] = division;
+    data['divisionName'] = divisionName;
+    data['color'] = color;
+    data['backgroundColor'] = backgroundColor;
+    data['smallIcon'] = smallIcon;
+    data['largeIcon'] = largeIcon;
+    data['rankTriangleDownIcon'] = rankTriangleDownIcon;
+    data['rankTriangleUpIcon'] = rankTriangleUpIcon;
     return data;
   }
 }
