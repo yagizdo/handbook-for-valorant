@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:valorant_tips/constants/app_assets.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
 import 'package:valorant_tips/screens/agents_screen.dart';
 import 'package:valorant_tips/screens/maps_screen.dart';
@@ -25,6 +26,9 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     const OthersScreen(),
   ];
 
+  // Assets
+  final AppAssets _appAssets = AppAssets();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +44,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
               activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               activeColorSecondary: Colors.white,
-              icon: Image.asset(
-                '/Users/yagizdo/Projects/valorant_tips/lib/constants/icons/agent_icon.png',
+              icon: Image.asset(_appAssets.agents_icon,
                 width: 18.w,
               ),
               title: 'Agents'),
@@ -59,8 +62,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
               activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               activeColorSecondary: Colors.white,
-              icon: Image.asset(
-                'lib/constants/icons/weapons_icon.png',
+              icon: Image.asset(_appAssets.weapons_icon,
                 width: 30.w,
               ),
               title: 'Weapons'),
@@ -76,7 +78,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                 child: CircleAvatar(
                   backgroundColor: white,
                   backgroundImage:
-                      const AssetImage('lib/constants/icons/rank_icon.png'),
+                  AssetImage(_appAssets.ranks_icon),
                   radius: 8.w,
                 ),
               ),
