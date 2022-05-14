@@ -56,13 +56,13 @@ class Weapon {
 }
 
 class WeaponStats {
-  double? fireRate;
-  int? magazineSize;
-  double? runSpeedMultiplier;
-  double? equipTimeSeconds;
-  double? reloadTimeSeconds;
-  double? firstBulletAccuracy;
-  int? shotgunPelletCount;
+  dynamic fireRate;
+  dynamic? magazineSize;
+  dynamic? runSpeedMultiplier;
+  dynamic? equipTimeSeconds;
+  dynamic? reloadTimeSeconds;
+  dynamic? firstBulletAccuracy;
+  dynamic? shotgunPelletCount;
   String? wallPenetration;
   String? feature;
   String? fireMode;
@@ -148,11 +148,11 @@ class WeaponStats {
 }
 
 class AdsStats {
-  double? zoomMultiplier;
-  double? fireRate;
-  double? runSpeedMultiplier;
-  int? burstCount;
-  double? firstBulletAccuracy;
+  dynamic? zoomMultiplier;
+  dynamic? fireRate;
+  dynamic? runSpeedMultiplier;
+  dynamic? burstCount;
+  dynamic? firstBulletAccuracy;
 
   AdsStats(
       {this.zoomMultiplier,
@@ -219,11 +219,11 @@ class AirBurstStats {
 }
 
 class DamageRanges {
-  int? rangeStartMeters;
-  int? rangeEndMeters;
-  double? headDamage;
-  int? bodyDamage;
-  double? legDamage;
+  dynamic? rangeStartMeters;
+  dynamic? rangeEndMeters;
+  dynamic? headDamage;
+  dynamic? bodyDamage;
+  dynamic? legDamage;
 
   DamageRanges(
       {this.rangeStartMeters,
@@ -252,7 +252,7 @@ class DamageRanges {
 }
 
 class ShopData {
-  int? cost;
+  dynamic? cost;
   String? category;
   String? categoryText;
   GridPosition? gridPosition;
@@ -305,8 +305,8 @@ class ShopData {
 }
 
 class GridPosition {
-  int? row;
-  int? column;
+  dynamic? row;
+  dynamic? column;
 
   GridPosition({this.row, this.column});
 
