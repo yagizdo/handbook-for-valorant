@@ -18,7 +18,6 @@ RankClient _rankClient = RankClient();
 late Future<Iterable<Rank>> _ranks;
   @override
   void initState() {
-    print('calisti init');
     _ranks = _rankClient.getAllRanks();
     super.initState();
   }
