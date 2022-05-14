@@ -22,6 +22,9 @@ class _AgentsScreenState extends State<AgentsScreen> {
   AgentClient _agentClient = AgentClient();
   // Agents List
   late Future<Iterable<Agent>> agents;
+
+  // Selected Filter Index
+  int selectedFilterIndex = 0;
   // Agent Filter List
   var agentFilters = [
     'All',
@@ -67,15 +70,26 @@ class _AgentsScreenState extends State<AgentsScreen> {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: CupertinoColors.systemRed),
-                      width: 100.w,
-                      alignment: Alignment.center,
-                      child: Text(
-                        agentFilters[index],
-                        style: TextStyle(color: white, fontFamily: 'Valorant'),
+                    // Gesture detector for index update
+                    child: GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          selectedFilterIndex = index;
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            // If box selected bg color red and text color white
+                            // If box unselected bg color white and text color black
+                            color: selectedFilterIndex == index ? CupertinoColors.systemRed : CupertinoColors.white),
+                        width: 100.w,
+                        alignment: Alignment.center,
+                        child: Text(
+                          agentFilters[index],
+                          style: TextStyle(color: selectedFilterIndex == index ? white : black , fontFamily: 'Valorant',fontSize: 10.5.sp),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                   );
