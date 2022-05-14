@@ -7,7 +7,6 @@ import '../models/agent.dart';
 class WeaponsClient extends ApiClient {
   // Get Weapons
   Future<Iterable<Weapon>> getWeapons() async {
-    print('metod calisti');
     Iterable<Weapon> weapons = [];
     try {
       // Get response
