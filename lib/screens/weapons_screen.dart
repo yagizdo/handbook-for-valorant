@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/models/weapon.dart';
 import 'package:valorant_tips/network/weapon_client.dart';
 import 'package:valorant_tips/widgets/weapon_screen/weapon_list.dart';
@@ -24,18 +25,21 @@ class _WeaponScreenState extends State<WeaponScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          FutureBuilder<Iterable<Weapon>>(
-            future: _weapons,
-            builder: (
-                BuildContext context,
-                AsyncSnapshot<Iterable<Weapon>> snapshot,
-                ) {
-              return WeaponsList(snapshot: snapshot);
-            },
-          ),
-        ],
+      body: SafeArea(
+        minimum: EdgeInsets.only(top: 50.h),
+        child: Column(
+          children: [
+            FutureBuilder<Iterable<Weapon>>(
+              future: _weapons,
+              builder: (
+                  BuildContext context,
+                  AsyncSnapshot<Iterable<Weapon>> snapshot,
+                  ) {
+                return WeaponsList(snapshot: snapshot);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

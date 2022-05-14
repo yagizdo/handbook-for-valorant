@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:valorant_tips/widgets/weapon_screen/weapon_card.dart';
 
 import '../maps_screen/maps_card.dart';
 
@@ -15,12 +16,12 @@ class WeaponsList extends StatelessWidget {
         return const Text('Error');
       } else if (snapshot.hasData) {
         return Expanded(
-          child: ListView.builder(
-              itemCount: snapshot.data!.length,
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              itemCount: snapshot.data!.length - 1,
               itemBuilder: (context, index) {
                 var data = snapshot.data!.toList();
-                return Padding(padding: EdgeInsets.all(10),child: Container(color: Colors.white,alignment: Alignment.center,child: Text(
-                    data[index].displayName ?? 'No Weapon Data'),));
+                return WeaponCard(weapon: data[index]);
               }),
         );
       } else {
