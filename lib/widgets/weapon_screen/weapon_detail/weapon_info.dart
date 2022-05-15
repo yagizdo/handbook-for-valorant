@@ -17,7 +17,7 @@ class WeaponInfo extends StatelessWidget {
       padding: EdgeInsets.all(10.w),
       child: Container(
           decoration: BoxDecoration(
-            color: blackblue,
+            color: black_second,
             borderRadius: BorderRadius.circular(20),
           ),
           height: 200.h,

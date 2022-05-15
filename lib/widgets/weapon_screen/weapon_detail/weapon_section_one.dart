@@ -17,7 +17,7 @@ class WeaponSectionOne extends StatelessWidget {
       child: Container(
         height: 150.h,
         decoration: BoxDecoration(
-          color: blackblue,
+          color: black_second,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
