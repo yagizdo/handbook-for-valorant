@@ -34,10 +34,7 @@ class WeaponSectionOne extends StatelessWidget {
                     children: [
                       const Text('KILLFEED ICON',style: TextStyle(color: white,fontWeight: FontWeight.bold)),
                       SizedBox(height: 5.h,),
-
-                      // I just used substring to get the last part.
-                      // Because one thing that comes: "EEquippableCategory::Rifle"
-                      CachedNetworkImage(width: weapon.displayName == 'Frenzy' ? 60.w : 70.w,imageUrl: weapon.killStreamIcon ?? 'https://cdn.iconscout.com/icon/free/png-256/data-not-found-1965034-1662569.png',),
+                      CachedNetworkImage(width: weapon.displayName == 'Frenzy' || weapon.displayName == 'Classic' ? 40.w : 70.w,imageUrl: weapon.killStreamIcon ?? 'https://cdn.iconscout.com/icon/free/png-256/data-not-found-1965034-1662569.png',),
                     ],
                   ),
                   SizedBox(width: 20.w),
@@ -58,7 +55,7 @@ class WeaponSectionOne extends StatelessWidget {
                       const Text('WALL DAMAGE',style: TextStyle(color: white,fontWeight: FontWeight.bold)),
                       SizedBox(height: 5.h,),
                       // I just used substring to get the last part.
-                      // Because one thing that comes: "EEquippableCategory::Rifle"
+                      // Because one thing that comes: "EWallPenetrationDisplayType::Low"
                       Text(weapon.weaponStats?.wallPenetration?.substring(29) ?? 'No Data',style: TextStyle(color: white),),
                     ],
                   ),
@@ -78,9 +75,6 @@ class WeaponSectionOne extends StatelessWidget {
                     children: [
                       const Text('FIRE RATE',style: TextStyle(color: white,fontWeight: FontWeight.bold)),
                       SizedBox(height: 5.h,),
-
-                      // I just used substring to get the last part.
-                      // Because one thing that comes: "EEquippableCategory::Rifle"
                       Text('${weapon.weaponStats?.fireRate ?? 'No Data'} / Sec',style: TextStyle(color: white),),
                     ],
                   ),
@@ -90,8 +84,6 @@ class WeaponSectionOne extends StatelessWidget {
                     children: [
                       Text('RELOAD SPEED',style: TextStyle(color: white,fontWeight: FontWeight.bold,fontSize: 10.sp)),
                       SizedBox(height: 5.h,),
-                      // I just used substring to get the last part.
-                      // Because one thing that comes: "EEquippableCategory::Rifle"
                       Text('${weapon.weaponStats?.reloadTimeSeconds ?? 'No Data'} / Sec',style: TextStyle(color: white),),
                     ],
                   ),
@@ -99,11 +91,9 @@ class WeaponSectionOne extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('EQUIP SPEED',style: TextStyle(color: white,fontWeight: FontWeight.bold)),
+                      const Text('MAGAZINE SIZE',style: TextStyle(color: white,fontWeight: FontWeight.bold)),
                       SizedBox(height: 5.h,),
-                      // I just used substring to get the last part.
-                      // Because one thing that comes: "EEquippableCategory::Rifle"
-                      Text(weapon.weaponStats?.wallPenetration?.substring(29) ?? 'No Data',style: TextStyle(color: white),),
+                      Text('${weapon.weaponStats?.magazineSize ?? 'No Data'}',style: TextStyle(color: white),),
                     ],
                   ),
                 ],

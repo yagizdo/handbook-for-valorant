@@ -4,4 +4,5 @@ class AppAssets {
   final ranks_icon = 'lib/constants/icons/rank_icon.png';
 
   final human_full = 'lib/constants/img/human_full.png';
+  final human = 'lib/constants/img/human_img.png';
 }
