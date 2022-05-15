@@ -64,7 +64,6 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
           PersistentBottomNavBarItem(
               activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
-              activeColorSecondary: Colors.white,
               icon: Image.asset(_appAssets.weapons_icon,
                 width: 30.w,
               ),
@@ -72,7 +71,6 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
           // Ranks
           PersistentBottomNavBarItem(
-              activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               activeColorSecondary: Colors.white,
               icon: const Icon(Icons.emoji_events_outlined),
@@ -80,7 +78,6 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
           // More
           PersistentBottomNavBarItem(
-              activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               activeColorSecondary: Colors.white,
               icon: const Icon(Icons.more_horiz_rounded),
