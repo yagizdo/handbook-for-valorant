@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:valorant_tips/constants/app_assets.dart';
-import 'package:valorant_tips/constants/app_colors.dart';
 import 'package:valorant_tips/screens/agents_screen.dart';
 import 'package:valorant_tips/screens/maps_screen.dart';
 import 'package:valorant_tips/screens/others_screen.dart';
@@ -44,6 +43,10 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
               activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               activeColorSecondary: Colors.white,
+              inactiveIcon: Image.asset(_appAssets.agents_icon,
+                color: CupertinoColors.inactiveGray,
+                width: 18.w,
+              ),
               icon: Image.asset(_appAssets.agents_icon,
                 width: 18.w,
               ),
@@ -72,16 +75,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
               activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               activeColorSecondary: Colors.white,
-              icon: CircleAvatar(
-                backgroundColor: Colors.white,
-                radius: 9.w,
-                child: CircleAvatar(
-                  backgroundColor: white,
-                  backgroundImage:
-                  AssetImage(_appAssets.ranks_icon),
-                  radius: 8.w,
-                ),
-              ),
+              icon: const Icon(Icons.emoji_events_outlined),
               title: 'Ranks'),
 
           // More
