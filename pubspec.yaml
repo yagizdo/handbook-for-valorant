@@ -56,7 +56,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "app_icon/app icon.png"
+  image_path: "app_icon/android_icon.png"
 
 # The following section is specific to Flutter.
 flutter:
