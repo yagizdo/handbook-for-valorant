@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yagizdokumaci.valorant_tips">
    <application
-        android:label="Valo Guide"
+        android:label="Valorant Guide"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
