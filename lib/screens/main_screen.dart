@@ -5,7 +5,6 @@ import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:valorant_tips/constants/app_assets.dart';
 import 'package:valorant_tips/screens/agents_screen.dart';
 import 'package:valorant_tips/screens/maps_screen.dart';
-import 'package:valorant_tips/screens/others_screen.dart';
 import 'package:valorant_tips/screens/ranks_screen.dart';
 import 'package:valorant_tips/screens/weapons_screen.dart';
 
@@ -22,7 +21,6 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     const MapsScreen(),
     const WeaponScreen(),
     const RanksScreen(),
-    const OthersScreen(),
   ];
 
   // Assets
@@ -33,7 +31,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     return Scaffold(
       bottomNavigationBar: PersistentTabView(
         context,
-        navBarStyle: NavBarStyle.style15,
+        navBarStyle: NavBarStyle.style14,
         backgroundColor:
             Theme.of(context).bottomNavigationBarTheme.backgroundColor!,
         screens: tabs,
@@ -62,8 +60,9 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
           // Weapons
           PersistentBottomNavBarItem(
-              activeColorPrimary: CupertinoColors.destructiveRed,
+              activeColorPrimary: CupertinoColors.white,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
+
               icon: Image.asset(_appAssets.weapons_icon,
                 width: 30.w,
               ),
@@ -75,13 +74,6 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
               activeColorSecondary: Colors.white,
               icon: const Icon(Icons.emoji_events_outlined),
               title: 'Ranks'),
-
-          // More
-          PersistentBottomNavBarItem(
-              inactiveColorPrimary: CupertinoColors.inactiveGray,
-              activeColorSecondary: Colors.white,
-              icon: const Icon(Icons.more_horiz_rounded),
-              title: 'More'),
         ],
       ),
     );
