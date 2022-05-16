@@ -29,9 +29,9 @@ class _AgentsScreenState extends State<AgentsScreen> {
   var agentFilters = [
     'All',
     'Duelist',
-    'Sentinels',
-    'Initiators',
-    'Controllers',
+    'Sentinel',
+    'Initiator',
+    'Controller',
   ];
 
   // Filtred Agents
@@ -73,9 +73,18 @@ class _AgentsScreenState extends State<AgentsScreen> {
                     // Gesture detector for index update
                     child: GestureDetector(
                       onTap: (){
-                        setState(() {
-                          selectedFilterIndex = index;
-                        });
+                        if(agentFilters[index].toLowerCase() == 'all') {
+                         setState(() {
+                           agents = _agentClient.getAgents();
+                           selectedFilterIndex = index;
+                         });
+                        } else {
+                          setState(() {
+                            agents = _agentClient.getAgents(agentRole: agentFilters[index]);
+                            selectedFilterIndex = index;
+                          });
+                        }
+
                       },
                       child: Container(
                         decoration: BoxDecoration(

@@ -5,7 +5,7 @@ import '../models/agent.dart';
 
 class AgentClient extends ApiClient {
   // Get Agents
-  Future<Iterable<Agent>> getAgents() async {
+  Future<Iterable<Agent>> getAgents({String? agentRole}) async {
     Iterable<Agent> agents = [];
     try {
       // Get response
@@ -16,6 +16,10 @@ class AgentClient extends ApiClient {
       agents = parsedList.map((element) {
         return Agent.fromJson(element);
       });
+
+      if (agentRole != null) {
+        agents = agents.where((element) => element.role!.displayName!.toLowerCase() == agentRole.toLowerCase());
+      }
 
     } on DioError catch (e) {
       if (e.response != null) {
