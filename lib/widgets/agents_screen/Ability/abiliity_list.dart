@@ -87,7 +87,7 @@ class _AbiliityListState extends State<AbiliityList> {
                 children: [
                   // Ability name and ability button
                   Text('${
-                      widget.abilityList[selectedIndex].slot! == 'Ability1' ? 'Q -' : widget.abilityList[selectedIndex].slot == 'Ability2' ? 'E -' : widget.abilityList[selectedIndex].slot == 'Grenade'  ? 'C -': 'X -'} ' + widget.abilityList[selectedIndex].displayName!,style: TextStyle(fontSize: 16.sp),),
+                      widget.abilityList[selectedIndex].slot! == 'Ability1' ? 'Q - ' : widget.abilityList[selectedIndex].slot == 'Ability2' ? 'E - ' : widget.abilityList[selectedIndex].slot == 'Grenade'  ? 'C - ': widget.abilityList[selectedIndex].slot == 'Ultimate' ? 'X - ' : 'Passive - '}' + widget.abilityList[selectedIndex].displayName!,style: TextStyle(fontSize: 16.sp),),
                   SizedBox(height: 10.h,),
                   Text(widget.abilityList[selectedIndex].description!,textAlign: TextAlign.start,style: TextStyle(fontSize: 14.sp),),
                 ],
