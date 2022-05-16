@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/constants/app_colors.dart';
@@ -14,6 +15,28 @@ class AgentsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Agent Colors
+    var agentColors = {
+      'fade': fadeColors,
+      'breach': breachColors,
+      'raze': razeColors,
+      'chamber': chamberColors,
+      'kay/o': kayoColors,
+      'skye': skyeColors,
+      'cypher': cypherColors,
+      'sova': sovaColors,
+      'killjoy': killjoyColors,
+      'viper': viperColors,
+      'phoenix': phoenixColors,
+      'astra': astraColors,
+      'brimstone': brimstoneColors,
+      'neon': neonColors,
+      'yoru': yoruColors,
+      'sage': sageColors,
+      'reyna': reynaColors,
+      'omen': omenColors,
+      'jett': jettColors,
+    };
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -36,66 +59,8 @@ class AgentsCard extends StatelessWidget {
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors:
-                    // Fade
-                    agent.displayName!.toLowerCase() == 'fade' ? fadeColors
-                        :
-                    // Breach
-                    agent.displayName!.toLowerCase() == 'breach' ? breachColors
-                        :
-                    // Raze
-                    agent.displayName!.toLowerCase() == 'raze' ? razeColors
-                        :
-                    // Chamber
-                    agent.displayName!.toLowerCase() == 'chamber' ? chamberColors
-                        :
-                    // Kayo
-                    agent.displayName!.toLowerCase() == 'kay/o' ? kayoColors
-                        :
-                    // Skye
-                    agent.displayName!.toLowerCase() == 'skye' ? skyeColors
-                        :
-                    // Cypher
-                    agent.displayName!.toLowerCase() == 'cypher' ? cypherColors
-                        :
-                    // Sova
-                    agent.displayName!.toLowerCase() == 'sova' ? sovaColors
-                        :
-                    // Killjoy
-                    agent.displayName!.toLowerCase() == 'killjoy' ? killjoyColors
-                        :
-                    // Viper
-                    agent.displayName!.toLowerCase() == 'viper' ? viperColors
-                        :
-                    // Phoneix
-                    agent.displayName == 'Phoenix' ? phoneixColors
-                        :
-                    // Astra
-                    agent.displayName!.toLowerCase() == 'astra' ? astraColors
-                        :
-                    // Brimstone
-                    agent.displayName!.toLowerCase() == 'brimstone' ? brimstoneColors
-                        :
-                    // Neon
-                    agent.displayName!.toLowerCase() == 'neon' ? neonColors
-                        :
-                    // Yoru
-                    agent.displayName!.toLowerCase() == 'yoru' ? yoruColors
-                        :
-                    // Sage
-                    agent.displayName!.toLowerCase() == 'sage' ? sageColors
-                        :
-                    // Reyna
-                    agent.displayName!.toLowerCase() == 'reyna' ? reynaColors
-                        :
-                    // Omen
-                    agent.displayName!.toLowerCase() == 'omen' ? omenColors
-                        :
-                    // Jett
-                    agent.displayName!.toLowerCase() == 'jett' ? jettColors
-                        :
-                    [Colors.black87,
-                      Colors.blueGrey,]),
+                    colors: agentColors[agent.displayName!.toLowerCase()] ?? [CupertinoColors.destructiveRed,CupertinoColors.black]
+                ),
                 borderRadius: const BorderRadius.all(
                   Radius.circular(10),
                 ),

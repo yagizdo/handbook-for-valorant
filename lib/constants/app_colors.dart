@@ -62,7 +62,7 @@ List<Color> viperColors = [
   const Color(0xFFa5ae60),
   const Color(0xFFdef2ac)
 ];
-List<Color> phoneixColors = [
+List<Color> phoenixColors = [
   const Color(0xFFf7bf60),
   const Color(0xFFea6d4e),
   const Color(0xFF838ea6),
