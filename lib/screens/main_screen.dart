@@ -64,8 +64,12 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
               inactiveColorPrimary: CupertinoColors.inactiveGray,
 
               icon: Image.asset(_appAssets.weapons_icon,
-                width: 30.w,
+                width: 25.w,
               ),
+              inactiveIcon: Image.asset(_appAssets.weapons_icon,
+            width: 25.w,
+                color: CupertinoColors.inactiveGray,
+          ),
               title: 'Weapons'),
 
           // Ranks
