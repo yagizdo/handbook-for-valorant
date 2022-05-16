@@ -4,6 +4,8 @@ import 'package:valorant_tips/models/weapon.dart';
 import 'package:valorant_tips/network/weapon_client.dart';
 import 'package:valorant_tips/widgets/weapon_screen/weapon_list.dart';
 
+import '../constants/app_colors.dart';
+
 class WeaponScreen extends StatefulWidget {
   const WeaponScreen({Key? key}) : super(key: key);
 
@@ -22,13 +24,22 @@ class _WeaponScreenState extends State<WeaponScreen> {
    _weapons = _weaponsClient.getWeapons();
     super.initState();
   }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         minimum: EdgeInsets.only(top: 50.h),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Text('Weapons',style: TextStyle(color: white,fontFamily: 'Valorant',fontSize: 20.sp),),
+            SizedBox(height: 10.h,),
             FutureBuilder<Iterable<Weapon>>(
               future: _weapons,
               builder: (

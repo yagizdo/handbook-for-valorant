@@ -49,7 +49,7 @@ class _AgentsScreenState extends State<AgentsScreen> {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: EdgeInsets.only(top: 40.h, left: 13.w),

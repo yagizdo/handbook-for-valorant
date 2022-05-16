@@ -29,7 +29,7 @@ class _RanksScreenState extends State<RanksScreen> {
         body: SafeArea(
       minimum: EdgeInsets.only(top: 50.h),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
             padding: EdgeInsets.only(left: 20.w),

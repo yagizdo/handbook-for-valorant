@@ -27,28 +27,32 @@ class _MapsScreenState extends State<MapsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-           minimum: EdgeInsets.only(top: 40.h),
-          child: Padding(
-            padding: EdgeInsets.only(left: 10.w,right: 10.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('Maps',style: TextStyle(color: white,fontFamily: 'Valorant',fontSize: 20.sp),),
-            SizedBox(height: 10.h,),
+      minimum: EdgeInsets.only(top: 40.h),
+      child: Padding(
+        padding: EdgeInsets.only(left: 10.w, right: 10.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'Maps',
+              style: TextStyle(
+                  color: white, fontFamily: 'Valorant', fontSize: 20.sp),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
             Expanded(
-              child: FutureBuilder<Iterable<Maps>>(
-                future: maps,
-                  builder: (
-                BuildContext context,
-                AsyncSnapshot<Iterable<Maps>> snapshot,
-              ) {
-                   return MapsList(snapshot: snapshot);
-                  }
-                  )
-            )
-      ],
-    ),
-          ),
-        ));
+                child: FutureBuilder<Iterable<Maps>>(
+                    future: maps,
+                    builder: (
+                      BuildContext context,
+                      AsyncSnapshot<Iterable<Maps>> snapshot,
+                    ) {
+                      return MapsList(snapshot: snapshot);
+                    }))
+          ],
+        ),
+      ),
+    ));
   }
 }
