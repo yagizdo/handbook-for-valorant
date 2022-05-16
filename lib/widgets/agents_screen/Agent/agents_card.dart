@@ -23,7 +23,7 @@ class AgentsCard extends StatelessWidget {
           ),
         );
       },
-      child: Stack(alignment: Alignment.topLeft, children: [
+      child: Stack(alignment: Alignment.center, children: [
         // Transparent Container
         Container(
           color: Colors.transparent,
