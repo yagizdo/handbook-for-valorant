@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     return Scaffold(
       bottomNavigationBar: PersistentTabView(
         context,
-        navBarStyle: NavBarStyle.style14,
+        navBarStyle: NavBarStyle.style7,
         backgroundColor:
             Theme.of(context).bottomNavigationBarTheme.backgroundColor!,
         screens: tabs,
@@ -60,8 +60,9 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
           // Weapons
           PersistentBottomNavBarItem(
-              activeColorPrimary: CupertinoColors.white,
+              activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
+              activeColorSecondary: CupertinoColors.white,
 
               icon: Image.asset(_appAssets.weapons_icon,
                 width: 25.w,
@@ -74,6 +75,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
           // Ranks
           PersistentBottomNavBarItem(
+              activeColorPrimary: CupertinoColors.destructiveRed,
               inactiveColorPrimary: CupertinoColors.inactiveGray,
               activeColorSecondary: Colors.white,
               icon: const Icon(Icons.emoji_events_outlined),
