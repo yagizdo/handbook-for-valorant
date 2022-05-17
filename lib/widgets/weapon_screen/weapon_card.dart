@@ -21,14 +21,11 @@ class WeaponCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 15.h,horizontal: 15.w),
         child: Container(
           decoration: BoxDecoration(
-            gradient: const LinearGradient(
-                colors: [black,CupertinoColors.systemGrey, black],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight),
+           color: HexColor('#F1DAC4'),
             borderRadius: BorderRadius.circular(15),
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // For top padding
@@ -60,18 +57,18 @@ class WeaponCard extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 5.w, top: 20.h),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // Weapon Name
                     Text(
                       weapon.displayName!.trim(),
                       style: TextStyle(
-                          color: white, fontSize: 20.sp, fontFamily: 'Valorant'),
+                          color: HexColor('#0D1927'), fontSize: 20.sp, fontFamily: 'Valorant'),
                     ),
                     // Weapon Category
                     Text(
                       '${weapon.shopData!.category!}',
-                      style: TextStyle(color: white, fontSize: 10.sp),
+                      style: TextStyle(color: HexColor('#0D1927'), fontSize: 10.sp),
                     ),
                   ],
                 ),
