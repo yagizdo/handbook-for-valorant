@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +54,7 @@ class _AgentsScreenState extends State<AgentsScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.only(top: 40.h, left: 13.w),
+              padding: EdgeInsets.only(top: 50.h, left: 13.w),
               child: const Text(
                 'Agents',
                 style: TextStyle(
@@ -69,7 +71,7 @@ class _AgentsScreenState extends State<AgentsScreen> {
                 itemCount: agentFilters.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: EdgeInsets.all(Platform.isAndroid ? 8.w :10.w),
                     // Gesture detector for index update
                     child: GestureDetector(
                       onTap: (){

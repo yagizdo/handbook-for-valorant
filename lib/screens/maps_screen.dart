@@ -27,7 +27,7 @@ class _MapsScreenState extends State<MapsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      minimum: EdgeInsets.only(top: 40.h),
+      minimum: EdgeInsets.only(top: 50.h),
       child: Padding(
         padding: EdgeInsets.only(left: 10.w, right: 10.w),
         child: Column(

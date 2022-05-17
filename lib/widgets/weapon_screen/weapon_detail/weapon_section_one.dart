@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,7 +36,7 @@ class WeaponSectionOne extends StatelessWidget {
                     children: [
                       const Text('KILLFEED ICON',style: TextStyle(color: white,fontWeight: FontWeight.bold)),
                       SizedBox(height: 5.h,),
-                      CachedNetworkImage(width: weapon.displayName == 'Frenzy' || weapon.displayName == 'Classic' ? 40.w : 70.w,imageUrl: weapon.killStreamIcon ?? 'https://cdn.iconscout.com/icon/free/png-256/data-not-found-1965034-1662569.png',),
+                      CachedNetworkImage(width: weapon.displayName == 'Frenzy' || weapon.displayName == 'Classic' ? Platform.isAndroid ?  27.w : 40.w : Platform.isAndroid ? 50.w : 70.w,imageUrl: weapon.killStreamIcon ?? 'https://cdn.iconscout.com/icon/free/png-256/data-not-found-1965034-1662569.png',),
                     ],
                   ),
                   SizedBox(width: 20.w),

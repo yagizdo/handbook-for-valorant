@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valorant_tips/models/weapon.dart';
@@ -59,7 +61,7 @@ class WeaponSectionTwo extends StatelessWidget {
                         children: [
                           Image.asset(
                             AppAssets().human,
-                            width: 70.h,
+                            width: Platform.isAndroid ? 65.h : 70.h,
                           ),
                         ],
                       ),
