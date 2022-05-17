@@ -29,6 +29,8 @@ class RanksList extends StatelessWidget {
 
           // Gridview builder
           child: GridView.builder(
+              addAutomaticKeepAlives: false,
+              addRepaintBoundaries: false,
             // Gridview padding
             padding: EdgeInsets.symmetric(horizontal: 10.w),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

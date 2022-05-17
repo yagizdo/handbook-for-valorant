@@ -25,6 +25,8 @@ class _AbiliityListState extends State<AbiliityList> {
           SizedBox(
             height: 70.h,
             child: ListView.builder(
+              addAutomaticKeepAlives: false,
+              addRepaintBoundaries: false,
               scrollDirection: Axis.horizontal,
               itemCount: widget.abilityList.length,
               itemBuilder: (BuildContext context, int index) {

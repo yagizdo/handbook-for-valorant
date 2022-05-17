@@ -17,6 +17,8 @@ class WeaponsList extends StatelessWidget {
       } else if (snapshot.hasData) {
         return Expanded(
           child: GridView.builder(
+              addAutomaticKeepAlives: false,
+              addRepaintBoundaries: false,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
               itemCount: snapshot.data!.length - 1,
               itemBuilder: (context, index) {

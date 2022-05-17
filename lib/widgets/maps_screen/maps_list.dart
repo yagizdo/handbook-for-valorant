@@ -15,6 +15,8 @@ class MapsList extends StatelessWidget {
         return const Text('Error');
       } else if (snapshot.hasData) {
         return ListView.builder(
+            addAutomaticKeepAlives: false,
+            addRepaintBoundaries: false,
             itemCount: snapshot.data!.length,
             itemBuilder: (context, index) {
               var data = snapshot.data!.toList();

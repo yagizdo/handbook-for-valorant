@@ -18,6 +18,8 @@ class AgentList extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.only(top: 10.0),
           child: GridView.builder(
+            addAutomaticKeepAlives: false,
+            addRepaintBoundaries: false,
             scrollDirection: Axis.vertical,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,childAspectRatio: 2/2.4),
