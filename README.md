@@ -57,7 +57,10 @@ Run App
 
 
 ## App Video
-Soon..
+
+
+https://user-images.githubusercontent.com/31064552/169157868-86a1534f-d047-4608-9c34-11706319f964.mov
+
 
 
 ## Screenshots
