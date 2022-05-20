@@ -47,6 +47,10 @@ Run App
 - [ ] in app review system
 
 
+## Valorant API
+Valorant API I use: https://dash.valorant-api.com/
+
+
 ##  Libraries I use in the application:
 - Dio : https://pub.dev/packages/dio
 - Flutter Screenutil : https://pub.dev/packages/flutter_screenutil
