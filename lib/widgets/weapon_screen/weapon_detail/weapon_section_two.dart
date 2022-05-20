@@ -60,8 +60,8 @@ class WeaponSectionTwo extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Image.asset(
-                            AppAssets().human,
-                            width: Platform.isAndroid ? 65.h : 70.h,
+                            AppAssets().human_full,
+                            width: Platform.isAndroid ? 85.h : 90.h,
                           ),
                         ],
                       ),
