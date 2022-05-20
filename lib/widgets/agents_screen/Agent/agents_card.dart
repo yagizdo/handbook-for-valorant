@@ -59,8 +59,11 @@ class AgentsCard extends StatelessWidget {
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: agentColors[agent.displayName!.toLowerCase()] ?? [CupertinoColors.destructiveRed,CupertinoColors.black]
-                ),
+                    colors: agentColors[agent.displayName!.toLowerCase()] ??
+                        [
+                          CupertinoColors.destructiveRed,
+                          CupertinoColors.black
+                        ]),
                 borderRadius: const BorderRadius.all(
                   Radius.circular(10),
                 ),
@@ -98,7 +101,14 @@ class AgentsCard extends StatelessWidget {
         ),
 
         // Agent Image
-        Positioned(child: Hero(tag: agent,child: CachedNetworkImage(imageUrl: agent.fullPortraitV2!))),
+        Positioned(
+            child: Hero(
+                tag: agent,
+                child: CachedNetworkImage(
+                    placeholder: (context, url) =>
+                    const CircularProgressIndicator(),
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                    imageUrl: agent.fullPortraitV2!))),
       ]),
     );
   }
