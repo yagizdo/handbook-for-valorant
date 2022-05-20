@@ -20,12 +20,16 @@ class WeaponDetail extends StatelessWidget {
       minimum: EdgeInsets.only(top: 25.h),
       child: Scaffold(
         appBar: AppBar(),
-        body: Column(
-          children: [
-            WeaponInfo(weapon: weapon),
-            WeaponSectionOne(weapon: weapon),
-            WeaponSectionTwo(weapon: weapon),
-          ],
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            return Column(
+            children: [
+              WeaponInfo(weapon: weapon),
+              WeaponSectionOne(weapon: weapon,deviceInfo: constraints.maxHeight.round(),),
+              WeaponSectionTwo(weapon: weapon,deviceInfo: constraints.maxHeight.round(),),
+            ],
+          );
+          },
         ),
       ),
     );

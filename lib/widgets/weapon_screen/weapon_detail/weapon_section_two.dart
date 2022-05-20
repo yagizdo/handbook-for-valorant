@@ -8,14 +8,15 @@ import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 
 class WeaponSectionTwo extends StatelessWidget {
-  WeaponSectionTwo({Key? key,required this.weapon}) : super(key: key);
+  WeaponSectionTwo({Key? key,required this.weapon,required this.deviceInfo}) : super(key: key);
   Weapon weapon;
+  final deviceInfo;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.all(10.w),
+        padding: EdgeInsets.symmetric(horizontal : 10.w,vertical: 5.h),
         child:
         // Main Container
         Container(
@@ -55,13 +56,25 @@ class WeaponSectionTwo extends StatelessWidget {
 
                     // Human Body
                     Padding(
-                      padding: EdgeInsets.only(top: 10.h, left: 45.w),
+                      padding: EdgeInsets.only(top:
+                          // Iphone 5s and se 1.gen
+                      deviceInfo == 439 ? 20.h
+                          // Others
+                          : 10.h, left:
+                      // Iphone 5s and se 1.gen
+                      deviceInfo == 439 ? 60.w
+                          // Others
+                          : 45.w),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Image.asset(
                             AppAssets().human_full,
-                            width: Platform.isAndroid ? 85.h : 90.h,
+                            width: Platform.isAndroid ? 85.h :
+                            // Iphone 5s and se 1.gen
+                            deviceInfo == 439 ? 80.h
+                                // Others
+                                :90.h,
                           ),
                         ],
                       ),
