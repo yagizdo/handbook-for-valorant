@@ -40,7 +40,7 @@ class AgentInfo extends StatelessWidget {
   Stack agentImage() {
     return Stack(alignment: Alignment.bottomLeft, children: [
       Column(
-        children: [CachedNetworkImage(imageUrl: agent.fullPortraitV2!)],
+        children: [Hero(tag: agent,child: CachedNetworkImage(imageUrl: agent.fullPortraitV2!))],
       ),
       Positioned(
         left: 15.w,

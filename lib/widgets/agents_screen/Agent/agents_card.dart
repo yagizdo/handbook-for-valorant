@@ -98,7 +98,7 @@ class AgentsCard extends StatelessWidget {
         ),
 
         // Agent Image
-        Positioned(child: CachedNetworkImage(imageUrl: agent.fullPortraitV2!)),
+        Positioned(child: Hero(tag: agent,child: CachedNetworkImage(imageUrl: agent.fullPortraitV2!))),
       ]),
     );
   }
