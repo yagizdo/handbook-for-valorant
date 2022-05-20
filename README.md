@@ -55,6 +55,7 @@ Run App
 - Hex Color : https://pub.dev/packages/hexcolor
 - Flutter Native Splash : https://pub.dev/packages/flutter_native_splash
 - Flutter Launcher Icons : https://pub.dev/packages/flutter_launcher_icons
+- Connectivity Plus: https://pub.dev/packages/connectivity_plus
 
 
 ## App Video
