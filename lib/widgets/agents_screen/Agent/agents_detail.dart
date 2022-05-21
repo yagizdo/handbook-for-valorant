@@ -27,7 +27,7 @@ class _AgentsDetailState extends State<AgentsDetail> {
 
     // Scaffold
     return SafeArea(
-      minimum: EdgeInsets.only(top: 25.h),
+      minimum: EdgeInsets.only(top: 30.h),
       child: Scaffold(
         appBar: AppBar(toolbarHeight: 45.h,),
         body: SingleChildScrollView(

@@ -17,7 +17,7 @@ class WeaponDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      minimum: EdgeInsets.only(top: 25.h),
+      minimum: EdgeInsets.only(top: 30.h),
       child: Scaffold(
         appBar: AppBar(),
         body: LayoutBuilder(
