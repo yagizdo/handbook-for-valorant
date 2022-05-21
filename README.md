@@ -42,6 +42,8 @@ Run App
 ## What will be add :question:
 
 - [ ] Pro tips
+- [ ] Add Crosshairs
+- [ ] Share System for crosshairs 
 - [ ] Lineups (Like viper breeze post plant lineup)
 - [ ] Short agent skill videos (like breach flash short video)
 - [ ] in app review system
