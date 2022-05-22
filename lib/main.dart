@@ -1,6 +1,6 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import 'app.dart';
 
@@ -12,14 +12,10 @@ void main() async {
   ]);
 
   // Internet connection check
-  var connectivityResult = await (Connectivity().checkConnectivity());
-  if(connectivityResult == ConnectivityResult.wifi) {
-    print('internet connection wifi');
-  } else if (connectivityResult == ConnectivityResult.none)
-    {
-      print('Internet connection none');
-    }
+  var status = await InternetConnectionChecker().connectionStatus;
+  print(status);
+
 
     // Run app
-  runApp(MyApp(internetInfo: connectivityResult,));
+  runApp(MyApp(internetInfo: status,));
 }
