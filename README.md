@@ -61,7 +61,7 @@ Valorant API I use: https://dash.valorant-api.com/
 - Hex Color : https://pub.dev/packages/hexcolor
 - Flutter Native Splash : https://pub.dev/packages/flutter_native_splash
 - Flutter Launcher Icons : https://pub.dev/packages/flutter_launcher_icons
-- Connectivity Plus: https://pub.dev/packages/connectivity_plus
+- Internet Connection Checker : https://pub.dev/packages/internet_connection_checker
 
 
 ## App Video
