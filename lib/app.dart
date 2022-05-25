@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375,812),
       builder: (child) => MaterialApp(
-        title: 'Valo Guide',
+        title: 'Handbook for Valorant',
         debugShowCheckedModeBanner: false,
         // internet check
         home: internetInfo == InternetConnectionStatus.disconnected ? ErrorScreen() : const MainScreen(),
