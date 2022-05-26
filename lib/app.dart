@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375,812),
       builder: (child) => MaterialApp(
-        title: 'Handbook for Valorant',
+        title: Platform.isAndroid ?  'Guide for Valo' : 'Handbook for Valorant',
         debugShowCheckedModeBanner: false,
         // internet check
         home: internetInfo == InternetConnectionStatus.disconnected ? ErrorScreen() : const MainScreen(),
