@@ -6,6 +6,7 @@ import 'package:valorant_tips/constants/app_assets.dart';
 import 'package:valorant_tips/screens/agents_screen.dart';
 import 'package:valorant_tips/screens/maps_screen.dart';
 import 'package:valorant_tips/screens/ranks_screen.dart';
+import 'package:valorant_tips/screens/store_screen.dart';
 import 'package:valorant_tips/screens/weapons_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -21,6 +22,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     const MapsScreen(),
     const WeaponScreen(),
     const RanksScreen(),
+    const StoreScreen(),
   ];
 
   // Assets
@@ -80,6 +82,14 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
               activeColorSecondary: Colors.white,
               icon: const Icon(Icons.emoji_events_outlined),
               title: 'Ranks'),
+
+          // Daily Store
+          PersistentBottomNavBarItem(
+              activeColorPrimary: CupertinoColors.destructiveRed,
+              inactiveColorPrimary: CupertinoColors.inactiveGray,
+              activeColorSecondary: Colors.white,
+              icon: const Icon(Icons.storefront_outlined),
+              title: 'Daily Store'),
         ],
       ),
     );
