@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:valorant_tips/constants/app_assets.dart';
+import 'package:valorant_tips/network/review_service.dart';
+import 'package:valorant_tips/network/shared_preferences_helper.dart';
 import 'package:valorant_tips/screens/agents_screen.dart';
 import 'package:valorant_tips/screens/maps_screen.dart';
 import 'package:valorant_tips/screens/ranks_screen.dart';
@@ -23,8 +27,28 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     const RanksScreen(),
   ];
 
+  // Review Services
+  ReviewService _reviewService = ReviewService();
+
   // Assets
   final AppAssets _appAssets = AppAssets();
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Init sharedprefs
+    SharedPreferencesHelper.init();
+
+    // App Review
+    Timer(const Duration(seconds: 2), () {
+      _reviewService.isSecondTimeOpen().then((secondOpen) {
+        if (secondOpen) {
+          _reviewService.showRating();
+        }
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
