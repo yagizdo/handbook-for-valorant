@@ -11,11 +11,6 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
 
-  // Internet connection check
-  var status = await InternetConnectionChecker().connectionStatus;
-  print(status);
-
-
     // Run app
-  runApp(MyApp(internetInfo: status,));
+  runApp(MyApp());
 }
