@@ -36,7 +36,10 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+
+    // Init sharedprefs
     SharedPreferencesHelper.init();
+
     // App Review
     Timer(const Duration(seconds: 2), () {
       _reviewService.isSecondTimeOpen().then((secondOpen) {
