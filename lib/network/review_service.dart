@@ -1,5 +1,6 @@
 import 'package:in_app_review/in_app_review.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:valorant_tips/network/shared_preferences_helper.dart';
 
 const KEY = 'FIRST_TIME_OPEN';
 const COUNTER = 'OPEN_COUNTER';
@@ -24,12 +25,12 @@ class ReviewService {
         openCounter += 1;
         _sharedPreferences.setInt(COUNTER, openCounter);
         return true;
-      } else if (openCounter == 150) {
+      } else if (openCounter == 50) {
         _sharedPreferences.setBool(KEY, true);
         openCounter += 1;
         _sharedPreferences.setInt(COUNTER, openCounter);
         return true;
-      } else if (openCounter == 400) {
+      } else if (openCounter == 100) {
         _sharedPreferences.setBool(KEY, true);
         openCounter += 1;
         _sharedPreferences.setInt(COUNTER, openCounter);
@@ -52,7 +53,7 @@ class ReviewService {
         _inAppReview.requestReview();
       } else {
         _inAppReview.openStoreListing(
-          appStoreId: 'com.yagizdokumaci.todomoon',
+          appStoreId: 'com.yagizdokumaci.valorantTips',
         );
       }
       return true;
