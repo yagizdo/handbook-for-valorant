@@ -10,9 +10,8 @@ import 'package:valorant_tips/screens/error_screen.dart';
 import 'package:valorant_tips/screens/main_screen.dart';
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key,required this.internetInfo}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
-  var internetInfo;
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -26,8 +25,7 @@ class MyApp extends StatelessWidget {
         },
         title: Platform.isAndroid ?  'Guide for Valo' : 'Handbook for Valorant',
         debugShowCheckedModeBanner: false,
-        // internet check
-        home: internetInfo == InternetConnectionStatus.disconnected ? ErrorScreen(isNetworkError: true,) : const MainScreen(),
+        home: const MainScreen(),
         theme: AppTheme().valoTheme,
       ),
     );
