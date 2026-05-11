@@ -12,11 +12,12 @@ workflows:
         - firebase_credentials
         - firebase_config
         - ios_credentials
+        - app_config
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.yagizdokumaci.valorantTips
       android_signing:
-        - keystore: upload_keystore
+        - keystore: Handbook for Valorant Keystore
 
     triggering:
       events:
@@ -31,6 +32,11 @@ workflows:
         script: |
           echo $GOOGLE_SERVICES_JSON | base64 --decode > "$CM_BUILD_DIR/android/app/google-services.json"
           echo $GOOGLE_SERVICE_INFO_PLIST | base64 --decode > "$CM_BUILD_DIR/ios/Runner/GoogleService-Info.plist"
+
+      - name: Set up Firebase credentials for CLI
+        script: |
+          echo "$FIREBASE_SERVICE_ACCOUNT" > "$CM_BUILD_DIR/firebase_credentials.json"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$CM_BUILD_DIR/firebase_credentials.json" >> "$CM_ENV"
 
       - name: Set up key.properties for Android signing
         script: |
