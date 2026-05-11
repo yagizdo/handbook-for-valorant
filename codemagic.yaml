@@ -105,17 +105,19 @@ workflows:
         issuer_id: $APP_STORE_CONNECT_ISSUER_ID
         submit_to_testflight: true
         submit_to_app_store: false
+        beta_groups:
+          - beta-testers
 
       firebase:
         firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
         android:
           app_id: $FIREBASE_ANDROID_APP_ID
           groups:
-            - testers
+            - beta-testers
         ios:
           app_id: $FIREBASE_IOS_APP_ID
           groups:
-            - testers
+            - beta-testers
 
       email:
         recipients:
