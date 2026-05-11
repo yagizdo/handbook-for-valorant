@@ -52,6 +52,7 @@ class _ProductVideoSheetState extends State<ProductVideoSheet> {
     _selectedIndex = widget.initialIndex;
     _controller = BetterPlayerController(
       const BetterPlayerConfiguration(
+        autoPlay: true,
         controlsConfiguration: BetterPlayerControlsConfiguration(
           enableSkips: false,
           enableOverflowMenu: false,
@@ -96,13 +97,16 @@ class _ProductVideoSheetState extends State<ProductVideoSheet> {
       type: MaterialType.transparency,
       child: Stack(
         children: [
-          ClipRect(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                sigmaX: CustomWidgetDimensions.videoSheetBlurSigma,
-                sigmaY: CustomWidgetDimensions.videoSheetBlurSigma,
+          GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: ClipRect(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                  sigmaX: CustomWidgetDimensions.videoSheetBlurSigma,
+                  sigmaY: CustomWidgetDimensions.videoSheetBlurSigma,
+                ),
+                child: Container(color: context.colorScheme.scrim.withValues(alpha: 0.5)),
               ),
-              child: Container(color: context.colorScheme.scrim.withValues(alpha: 0.5)),
             ),
           ),
           SafeArea(

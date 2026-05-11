@@ -1,10 +1,10 @@
 [
   {
     "language": "tr-TR",
-    "text": "- Yenilendi: Profil sayfası bölümlere ayrılmış Ayarlar sayfasına dönüştürüldü (Tercihler, Veri, Hakkında)\n- Eklendi: Rekabetçi rütbeler artık Rütbeler sekmesinde görüntülenebilir\n- Eklendi: Uygulama dili ayarlardan değiştirilebilir (Türkçe / English)\n- Eklendi: Silah skin detay sayfası video oynatıcı ve arama özelliği ile\n- İyileştirildi: Ajan filtreleri artık API verilerinden dinamik olarak oluşturuluyor\n- İyileştirildi: Dil değiştirildiğinde tüm veriler seçilen dilde yeniden yükleniyor"
+    "text": "- İyileştirildi: Skin videoları artık açıldığında otomatik oynatılıyor\n- İyileştirildi: Video oynatıcı dışına tıklayarak kapatılabilir"
   },
   {
     "language": "en-US",
-    "text": "- Redesigned: Profile page transformed into a sectioned Settings page (Preferences, Data, About)\n- Added: Competitive ranks are now displayed under the Ranks tab\n- Added: App language can be changed from settings (English / Türkçe)\n- Added: Weapon skin detail page with video player and search\n- Improved: Agent filters are now dynamically generated from API data\n- Improved: All data refreshes in the selected language when language is changed"
+    "text": "- Improved: Skin videos now auto-play when opened\n- Improved: Video player can be closed by tapping outside"
   }
 ]
