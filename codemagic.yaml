@@ -29,6 +29,7 @@ workflows:
         script: |
           echo $GOOGLE_SERVICES_JSON | base64 --decode > "$CM_BUILD_DIR/android/app/google-services.json"
           echo $GOOGLE_SERVICE_INFO_PLIST | base64 --decode > "$CM_BUILD_DIR/ios/Runner/GoogleService-Info.plist"
+          echo $FIREBASE_OPTIONS_DART | base64 --decode > "$CM_BUILD_DIR/lib/firebase_options.dart"
 
       - name: Set up Firebase credentials for CLI
         script: |
