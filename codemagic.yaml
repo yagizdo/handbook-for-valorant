@@ -13,9 +13,6 @@ workflows:
         - firebase_config
         - ios_credentials
         - app_config
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: com.yagizdokumaci.valorantTips
       android_signing:
         - keystore: Handbook for Valorant Keystore
 
@@ -47,7 +44,19 @@ workflows:
           storeFile=$CM_KEYSTORE_PATH
           EOF
 
-      - name: Set up iOS code signing
+      - name: Set up keychain
+        script: keychain initialize
+
+      - name: Fetch signing files
+        script: |
+          app-store-connect fetch-signing-files "com.yagizdokumaci.valorantTips" \
+            --type IOS_APP_STORE \
+            --create
+
+      - name: Add certificates to keychain
+        script: keychain add-certificates
+
+      - name: Set up code signing settings on Xcode project
         script: xcode-project use-profiles
 
       - name: Make scripts executable
