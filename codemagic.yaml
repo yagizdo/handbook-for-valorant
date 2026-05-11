@@ -1,0 +1,108 @@
+workflows:
+  dev-build:
+    name: Dev Build
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+
+    environment:
+      flutter: "3.41.5"
+      xcode: latest
+      cocoapods: default
+      groups:
+        - firebase_credentials
+        - firebase_config
+        - ios_credentials
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.yagizdokumaci.valorantTips
+      android_signing:
+        - keystore: upload_keystore
+
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: develop
+          include: true
+          source: true
+
+    scripts:
+      - name: Decode Firebase config files
+        script: |
+          echo $GOOGLE_SERVICES_JSON | base64 --decode > "$CM_BUILD_DIR/android/app/google-services.json"
+          echo $GOOGLE_SERVICE_INFO_PLIST | base64 --decode > "$CM_BUILD_DIR/ios/Runner/GoogleService-Info.plist"
+
+      - name: Set up key.properties for Android signing
+        script: |
+          cat >> "$CM_BUILD_DIR/android/key.properties" <<EOF
+          storePassword=$CM_KEYSTORE_PASSWORD
+          keyPassword=$CM_KEY_PASSWORD
+          keyAlias=$CM_KEY_ALIAS
+          storeFile=$CM_KEYSTORE_PATH
+          EOF
+
+      - name: Set up iOS code signing
+        script: xcode-project use-profiles
+
+      - name: Make scripts executable
+        script: |
+          chmod +x ./scripts/app/build.sh
+          chmod +x ./scripts/app/lang.sh
+          chmod +x ./scripts/cd/create_build_number_firebase.sh
+
+      - name: Install dependencies
+        script: flutter pub get
+
+      - name: Generate code (localization + build_runner)
+        script: bash scripts/app/build.sh
+
+      - name: Calculate build number
+        script: bash scripts/cd/create_build_number_firebase.sh
+
+      - name: Run code analysis
+        script: |
+          set -e
+          set -x
+          bash scripts/ci/code_analyze.sh
+
+      - name: Build iOS IPA
+        script: |
+          flutter build ipa --release \
+            --build-number=$UPDATED_BUILD_NUMBER \
+            --export-options-plist=/Users/builder/export_options.plist
+
+      - name: Build Android APK
+        script: |
+          flutter build apk --release \
+            --build-number=$UPDATED_BUILD_NUMBER
+
+    artifacts:
+      - build/**/outputs/**/*.apk
+      - build/ios/ipa/*.ipa
+      - build/**/outputs/**/mapping.txt
+
+    publishing:
+      app_store_connect:
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
+        submit_to_testflight: true
+        submit_to_app_store: false
+
+      firebase:
+        firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
+        android:
+          app_id: $FIREBASE_ANDROID_APP_ID
+          groups:
+            - testers
+        ios:
+          app_id: $FIREBASE_IOS_APP_ID
+          groups:
+            - testers
+
+      email:
+        recipients:
+          - $CM_EMAIL_RECIPIENT
+        notify:
+          success: true
+          failure: true

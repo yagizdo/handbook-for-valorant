@@ -9,8 +9,8 @@ A community-built Flutter handbook for Valorant — browse agents, maps, weapons
 
 ## Screenshots
 
-| Agents | Maps | Weapons | Ranks |
-|---|---|---|---|
+| Agents        | Maps          | Weapons       | Ranks         |
+| ------------- | ------------- | ------------- | ------------- |
 | _coming soon_ | _coming soon_ | _coming soon_ | _coming soon_ |
 
 ## Features
@@ -25,18 +25,18 @@ A community-built Flutter handbook for Valorant — browse agents, maps, weapons
 
 ## Tech Stack
 
-| Layer | Choice |
-|---|---|
-| Framework | Flutter 3.41+ / Dart 3.11+ |
-| State management | [flutter_bloc](https://pub.dev/packages/flutter_bloc) (Cubit + Freezed union states) |
-| Models | [freezed](https://pub.dev/packages/freezed) + [json_serializable](https://pub.dev/packages/json_serializable) |
-| Routing | [auto_route](https://pub.dev/packages/auto_route) |
-| DI | [get_it](https://pub.dev/packages/get_it) |
-| HTTP | [dio](https://pub.dev/packages/dio) |
-| Local cache | [objectbox](https://pub.dev/packages/objectbox) |
-| Localization | [easy_localization](https://pub.dev/packages/easy_localization) |
-| Image cache | [cached_network_image](https://pub.dev/packages/cached_network_image) |
-| Video | [better_player_plus](https://pub.dev/packages/better_player_plus) |
+| Layer            | Choice                                                                                                        |
+| ---------------- | ------------------------------------------------------------------------------------------------------------- |
+| Framework        | Flutter 3.41+ / Dart 3.11+                                                                                    |
+| State management | [flutter_bloc](https://pub.dev/packages/flutter_bloc) (Cubit + Freezed union states)                          |
+| Models           | [freezed](https://pub.dev/packages/freezed) + [json_serializable](https://pub.dev/packages/json_serializable) |
+| Routing          | [auto_route](https://pub.dev/packages/auto_route)                                                             |
+| DI               | [get_it](https://pub.dev/packages/get_it)                                                                     |
+| HTTP             | [dio](https://pub.dev/packages/dio)                                                                           |
+| Local cache      | [objectbox](https://pub.dev/packages/objectbox)                                                               |
+| Localization     | [easy_localization](https://pub.dev/packages/easy_localization)                                               |
+| Image cache      | [cached_network_image](https://pub.dev/packages/cached_network_image)                                         |
+| Video            | [better_player_plus](https://pub.dev/packages/better_player_plus)                                             |
 
 ## Architecture
 
@@ -91,12 +91,12 @@ Skip Firebase? Remove `Firebase.initializeApp(...)` from `lib/main.dart`.
 
 ## Scripts
 
-| Script | Purpose |
-|---|---|
-| `scripts/app/build.sh` | Run `build_runner` for all packages |
-| `scripts/app/lang.sh` | Regenerate `LocaleKeys` from translation JSONs |
-| `scripts/ci/format_check.sh` | Verify formatting (line length 120) |
-| `scripts/ci/code_analyze.sh` | Run analyzer + custom lints |
+| Script                       | Purpose                                        |
+| ---------------------------- | ---------------------------------------------- |
+| `scripts/app/build.sh`       | Run `build_runner` for all packages            |
+| `scripts/app/lang.sh`        | Regenerate `LocaleKeys` from translation JSONs |
+| `scripts/ci/format_check.sh` | Verify formatting (line length 120)            |
+| `scripts/ci/code_analyze.sh` | Run analyzer + custom lints                    |
 
 ## Contributing
 
