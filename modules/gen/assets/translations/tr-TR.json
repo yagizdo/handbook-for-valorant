@@ -1,0 +1,107 @@
+{
+  "app": {
+    "title": "Valorant El Kitabı"
+  },
+  "common": {
+    "action": {
+      "retry": "Tekrar Dene"
+    },
+    "filter": {
+      "all": "Tümü"
+    },
+    "error": {
+      "generic": "Bir şeyler ters gitti. Lütfen daha sonra tekrar deneyin.",
+      "loadFailed": "Veriler yüklenemedi. Lütfen tekrar deneyin."
+    }
+  },
+  "nav": {
+    "agents": "Ajanlar",
+    "maps": "Haritalar",
+    "weapons": "Silahlar",
+    "ranks": "Rütbeler",
+    "settings": "Ayarlar"
+  },
+  "agents": {
+    "title": "Ajanlar",
+    "empty": "Ajan bulunamadı",
+    "noRoleData": "Rol Verisi Yok",
+    "section": {
+      "abilities": "Yetenekler",
+      "biography": "Biyografi"
+    }
+  },
+  "maps": {
+    "title": "Haritalar",
+    "empty": "Harita bulunamadı",
+    "section": {
+      "callouts": "Bilgiler"
+    },
+    "callout": {
+      "empty": "Bilgi bulunamadı",
+      "otherRegion": "Diğer",
+      "unknown": "Bilinmeyen"
+    }
+  },
+  "weapons": {
+    "title": "Silahlar",
+    "empty": "Silah bulunamadı",
+    "section": {
+      "stats": "İstatistikler",
+      "damageRanges": "Hasar Menzilleri",
+      "skins": "Kostümler"
+    },
+    "stats": {
+      "fireRate": "Atış Hızı",
+      "magazine": "Şarjör",
+      "reloadTime": "Şarjör Değiştirme",
+      "wallPenetration": "Duvar Delme",
+      "equipTime": "Kuşanma Süresi",
+      "firstBulletAcc": "İlk Mermi İsabeti",
+      "credits": "Kredi"
+    },
+    "damage": {
+      "range": "Menzil",
+      "head": "Kafa",
+      "body": "Gövde",
+      "leg": "Bacak"
+    },
+    "skins": {
+      "seeAll": "Tümünü Gör",
+      "search": "Skin ara...",
+      "level": "Seviye {}",
+      "chromas": "Renk Varyantları",
+      "noVideo": "Video mevcut değil",
+      "remaining": "+{} daha"
+    }
+  },
+  "ranks": {
+    "title": "Rütbeler",
+    "empty": "Rekabetçi rütbe bulunamadı"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "section": {
+      "preferences": "Tercihler",
+      "data": "Veri",
+      "about": "Hakkında"
+    },
+    "preferences": {
+      "darkMode": "Karanlık Mod",
+      "language": "Dil"
+    },
+    "data": {
+      "clearCache": "Önbelleği Temizle"
+    },
+    "about": {
+      "appVersion": "Uygulama Sürümü",
+      "rateApp": "Uygulamayı Değerlendir",
+      "privacyPolicy": "Gizlilik Politikası",
+      "termsOfService": "Kullanım Koşulları"
+    },
+    "language": {
+      "title": "Dil Seçin",
+      "english": "English",
+      "turkish": "Türkçe"
+    }
+  }
+}

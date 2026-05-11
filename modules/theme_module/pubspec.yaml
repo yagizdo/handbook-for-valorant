@@ -1,0 +1,26 @@
+name: theme_module
+description: "Modular theme system for Flutter apps with light/dark mode support and extensible color schemes."
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.11.0
+  flutter: ">=3.41.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: 9.1.1
+  freezed_annotation: 3.1.0
+  core:
+    path: ../core
+  gen:
+    path: ../gen
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lint_rules:
+    path: ../lint_rules
+  build_runner: 2.13.1
+  freezed: 3.2.3

@@ -1,0 +1,15 @@
+{
+  "dart.lineLength": 120,
+  "[dart]": {
+    "editor.rulers": [
+      120
+    ],
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.sortMembers": "never"
+    }
+  },
+  "dart.flutterSdkPath": ".fvm/versions/3.41.5"
+}

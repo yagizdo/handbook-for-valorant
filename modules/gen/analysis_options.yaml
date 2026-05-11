@@ -1,0 +1,18 @@
+include: package:lint_rules/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.gr.dart"
+    - "**/*.freezed.dart"
+    - "**/*.freezed.g.dart"
+    - "**/generated_plugin_registrant.dart"
+    - "**/firebase_options.dart"
+
+linter:
+  rules:
+    # gen module overrides — structurally necessary for generated code
+    depend_on_referenced_packages: false
+    library_private_types_in_public_api: false
+    use_setters_to_change_properties: false
+    flutter_style_todos: false

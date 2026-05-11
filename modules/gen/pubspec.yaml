@@ -1,0 +1,64 @@
+name: gen
+description: "A new Flutter package project."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ^3.11.0
+  flutter: ">=3.41.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Localization
+  easy_localization: 3.0.8
+
+  # Assets
+  flutter_gen: 5.13.0+1
+  flutter_svg: 2.2.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lint_rules:
+    path: ../lint_rules
+  build_runner: 2.13.1
+  flutter_gen_runner: 5.13.0+1
+
+flutter_gen:
+  assets:
+    outputs:
+      package_parameter_enabled: true
+      directory_path_enabled: true
+
+  output: lib/src/asset/
+  integrations:
+    flutter_svg: true
+
+  fonts:
+    enabled: true
+
+flutter:
+  assets:
+    - assets/translations/
+    - assets/icons/
+    - assets/icons/svg/
+    - assets/icons/other/
+    - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: Valorant
+      fonts:
+        - asset: assets/fonts/ValorantFont.ttf
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700

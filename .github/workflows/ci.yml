@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [master, develop, "Feature/**", "Hotfix/**", "Release/**", "Bugfix/**", "Refactor/**", "Chore/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/cirruslabs/flutter:3.41.5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore pub cache
+        uses: actions/cache@v4
+        with:
+          path: /root/.pub-cache
+          key: pub-cache-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: pub-cache-
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Check formatting
+        run: bash scripts/ci/format_check.sh
+
+  analyze:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/cirruslabs/flutter:3.41.5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore pub cache
+        uses: actions/cache@v4
+        with:
+          path: /root/.pub-cache
+          key: pub-cache-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: pub-cache-
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate code
+        run: bash scripts/app/build.sh
+
+      - name: Run analysis
+        run: bash scripts/ci/code_analyze.sh

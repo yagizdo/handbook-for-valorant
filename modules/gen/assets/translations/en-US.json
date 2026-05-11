@@ -1,0 +1,107 @@
+{
+  "app": {
+    "title": "Handbook for Valorant"
+  },
+  "common": {
+    "action": {
+      "retry": "Retry"
+    },
+    "filter": {
+      "all": "All"
+    },
+    "error": {
+      "generic": "Something went wrong. Please try again later.",
+      "loadFailed": "Failed to load data. Please try again."
+    }
+  },
+  "nav": {
+    "agents": "Agents",
+    "maps": "Maps",
+    "weapons": "Weapons",
+    "ranks": "Ranks",
+    "settings": "Settings"
+  },
+  "agents": {
+    "title": "Agents",
+    "empty": "No agents found",
+    "noRoleData": "No Role Data",
+    "section": {
+      "abilities": "Abilities",
+      "biography": "Biography"
+    }
+  },
+  "maps": {
+    "title": "Maps",
+    "empty": "No maps found",
+    "section": {
+      "callouts": "Callouts"
+    },
+    "callout": {
+      "empty": "No callouts available",
+      "otherRegion": "Other",
+      "unknown": "Unknown"
+    }
+  },
+  "weapons": {
+    "title": "Weapons",
+    "empty": "No weapons found",
+    "section": {
+      "stats": "Stats",
+      "damageRanges": "Damage Ranges",
+      "skins": "Skins"
+    },
+    "stats": {
+      "fireRate": "Fire Rate",
+      "magazine": "Magazine",
+      "reloadTime": "Reload Time",
+      "wallPenetration": "Wall Penetration",
+      "equipTime": "Equip Time",
+      "firstBulletAcc": "First Bullet Acc.",
+      "credits": "Credits"
+    },
+    "damage": {
+      "range": "Range",
+      "head": "Head",
+      "body": "Body",
+      "leg": "Leg"
+    },
+    "skins": {
+      "seeAll": "See All",
+      "search": "Search skins...",
+      "level": "Level {}",
+      "chromas": "Chromas",
+      "noVideo": "No video available",
+      "remaining": "+{} more"
+    }
+  },
+  "ranks": {
+    "title": "Ranks",
+    "empty": "No competitive ranks found"
+  },
+  "settings": {
+    "title": "Settings",
+    "section": {
+      "preferences": "Preferences",
+      "data": "Data",
+      "about": "About"
+    },
+    "preferences": {
+      "darkMode": "Dark Mode",
+      "language": "Language"
+    },
+    "data": {
+      "clearCache": "Clear Cache"
+    },
+    "about": {
+      "appVersion": "App Version",
+      "rateApp": "Rate App",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service"
+    },
+    "language": {
+      "title": "Select Language",
+      "english": "English",
+      "turkish": "Türkçe"
+    }
+  }
+}

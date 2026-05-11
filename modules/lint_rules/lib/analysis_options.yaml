@@ -1,0 +1,270 @@
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+
+linter:
+  rules:
+    # ============================================================
+    # 1. ERROR PREVENTION & SAFETY (29 rules)
+    # Guards against runtime errors, logic mistakes, null
+    # misuse, and patterns that cause crashes or silent failures.
+    # ============================================================
+    - avoid_empty_else
+    - avoid_returning_null_for_void
+    - avoid_type_to_string
+    - collection_methods_unrelated_type
+    - control_flow_in_finally
+    - empty_catches
+    - empty_statements
+    - exhaustive_cases
+    - hash_and_equals
+    - invalid_case_patterns
+    - literal_only_boolean_expressions
+    - no_adjacent_strings_in_list
+    - no_default_cases
+    - no_duplicate_case_values
+    - no_self_assignments
+    - noop_primitive_operations
+    - null_check_on_nullable_type_parameter
+    - null_closures
+    - only_throw_errors
+    - recursive_getters
+    - test_types_in_equals
+    - throw_in_finally
+    - unnecessary_overrides
+    - unnecessary_statements
+    - unreachable_from_main
+    - unrelated_type_equality_checks
+    - use_rethrow_when_possible
+    - valid_regexps
+    - void_checks
+
+    # ============================================================
+    # 2. TYPE SAFETY & INFERENCE (14 rules)
+    # Strong typing, proper type annotations, safe casting,
+    # and correct use of generics.
+    # ============================================================
+    - always_declare_return_types
+    - avoid_catches_without_on_clauses
+    - avoid_catching_errors
+    - avoid_double_and_int_checks
+    - avoid_dynamic_calls
+    - avoid_types_as_parameter_names
+    - cast_nullable_to_non_nullable
+    - no_runtimeType_toString
+    - prefer_generic_function_type_aliases
+    - prefer_typing_uninitialized_variables
+    - prefer_void_to_null
+    - strict_top_level_inference
+    - type_annotate_public_apis
+    - type_literal_in_constant_pattern
+
+    # ============================================================
+    # 3. ASYNC & CONCURRENCY (9 rules)
+    # Correct usage of async/await, futures, streams, and
+    # resource lifecycle management.
+    # ============================================================
+    - avoid_slow_async_io
+    - avoid_void_async
+    - await_only_futures
+    - cancel_subscriptions
+    - close_sinks
+    - discarded_futures
+    - unawaited_futures
+    - unnecessary_await_in_return
+    - use_build_context_synchronously
+
+    # ============================================================
+    # 4. NAMING & IDENTIFIERS (11 rules)
+    # Naming conventions for classes, variables, extensions,
+    # libraries, files, and parameters.
+    # ============================================================
+    - avoid_renaming_method_parameters
+    - avoid_shadowing_type_parameters
+    - camel_case_extensions
+    - camel_case_types
+    - constant_identifier_names
+    - file_names
+    - library_prefixes
+    - no_leading_underscores_for_library_prefixes
+    - no_leading_underscores_for_local_identifiers
+    - non_constant_identifier_names
+    - package_names
+
+    # ============================================================
+    # 5. IMPORTS, LIBRARIES & PROJECT STRUCTURE (11 rules)
+    # Import style, library visibility, package boundaries,
+    # and dependency organization.
+    # ============================================================
+    - always_use_package_imports
+    - avoid_relative_lib_imports
+    - avoid_web_libraries_in_flutter
+    - combinators_ordering
+    - conditional_uri_does_not_exist
+    - depend_on_referenced_packages
+    - directives_ordering
+    - implementation_imports
+    - library_private_types_in_public_api
+    - secure_pubspec_urls
+    - use_string_in_part_of_directives
+
+    # ============================================================
+    # 6. DOCUMENTATION & DEPRECATION (9 rules)
+    # Doc comments, deprecation annotations, library-level
+    # documentation, and suppression annotations.
+    # ============================================================
+    - annotate_overrides
+    - dangling_library_doc_comments
+    - deprecated_consistency
+    - deprecated_member_use_from_same_package
+    - document_ignores
+    - library_annotations
+    - provide_deprecation_message
+    - slash_for_doc_comments
+    - unintended_html_in_doc_comment
+
+    # ============================================================
+    # 7. DECLARATIONS & CLASS DESIGN (25 rules)
+    # Constructor style, parameter ordering, initializers,
+    # getters/setters, class members, and OOP patterns.
+    # ============================================================
+    - always_put_required_named_parameters_first
+    - avoid_equals_and_hash_code_on_mutable_classes
+    - avoid_init_to_null
+    - avoid_multiple_declarations_per_line
+    - avoid_positional_boolean_parameters
+    - avoid_return_types_on_setters
+    - avoid_setters_without_getters
+    - avoid_unused_constructor_parameters
+    - empty_constructor_bodies
+    - implicit_reopen
+    - matching_super_parameters
+    - overridden_fields
+    - parameter_assignments
+    - prefer_asserts_in_initializer_lists
+    - prefer_initializing_formals
+    - sort_constructors_first
+    - sort_unnamed_constructors_first
+    - tighten_type_of_initializing_formals
+    - type_init_formals
+    - unnecessary_constructor_name
+    - unnecessary_getters_setters
+    - use_enums
+    - use_setters_to_change_properties
+    - use_super_parameters
+    - use_to_and_as_if_applicable
+
+    # ============================================================
+    # 8. IMMUTABILITY & CONST (9 rules)
+    # Prefer const, final, and immutable patterns to reduce
+    # bugs and improve performance.
+    # ============================================================
+    - avoid_field_initializers_in_const_classes
+    - prefer_const_constructors
+    - prefer_const_constructors_in_immutables
+    - prefer_const_declarations
+    - prefer_const_literals_to_create_immutables
+    - prefer_final_fields
+    - prefer_final_in_for_each
+    - prefer_final_locals
+    - unnecessary_nullable_for_final_variable_declarations
+
+    # ============================================================
+    # 9. COLLECTIONS & OPERATORS (22 rules)
+    # Best practices for collections, null-aware operators,
+    # spread syntax, and idiomatic Dart expressions.
+    # ============================================================
+    - avoid_bool_literals_in_conditional_expressions
+    - avoid_function_literals_in_foreach_calls
+    - avoid_single_cascade_in_expression_statements
+    - no_literal_bool_comparisons
+    - prefer_collection_literals
+    - prefer_conditional_assignment
+    - prefer_contains
+    - prefer_for_elements_to_map_fromIterable
+    - prefer_if_null_operators
+    - prefer_inlined_adds
+    - prefer_is_empty
+    - prefer_is_not_empty
+    - prefer_is_not_operator
+    - prefer_iterable_whereType
+    - prefer_null_aware_method_calls
+    - prefer_null_aware_operators
+    - prefer_spread_collections
+    - unnecessary_null_aware_assignments
+    - unnecessary_null_in_if_null_operators
+    - unnecessary_to_list_in_spreads
+    - use_is_even_rather_than_modulo
+    - use_null_aware_elements
+
+    # ============================================================
+    # 10. FUNCTIONS, VARIABLES & EXPRESSIONS (12 rules)
+    # Function declarations, lambdas, tearoffs, variable
+    # declarations, return patterns, and expression idioms.
+    # ============================================================
+    - avoid_redundant_argument_values
+    - implicit_call_tearoffs
+    - join_return_with_assignment
+    - no_wildcard_variable_uses
+    - omit_local_variable_types
+    - prefer_function_declarations_over_variables
+    - unnecessary_lambdas
+    - unnecessary_late
+    - use_function_type_syntax_for_parameters
+    - use_late_for_private_fields_and_variables
+    - use_named_constants
+    - use_truncating_division
+
+    # ============================================================
+    # 11. CODE STYLE & FORMATTING (23 rules)
+    # Whitespace, quotes, commas, braces, string formatting,
+    # and syntactic consistency.
+    # ============================================================
+    - avoid_escaping_inner_quotes
+    - avoid_js_rounded_ints
+    - curly_braces_in_flow_control_structures
+    - eol_at_end_of_file
+    - leading_newlines_in_multiline_strings
+    - missing_whitespace_between_adjacent_strings
+    - prefer_adjacent_string_concatenation
+    - prefer_interpolation_to_compose_strings
+    - prefer_single_quotes
+    - require_trailing_commas
+    - unnecessary_brace_in_string_interps
+    - unnecessary_breaks
+    - unnecessary_const
+    - unnecessary_library_name
+    - unnecessary_new
+    - unnecessary_parenthesis
+    - unnecessary_raw_strings
+    - unnecessary_string_escapes
+    - unnecessary_string_interpolations
+    - unnecessary_this
+    - unnecessary_underscores
+    - use_raw_strings
+    - use_string_buffers
+
+    # ============================================================
+    # 12. FLUTTER & WIDGET BEST PRACTICES (11 rules)
+    # Flutter-specific rules for widgets, state management,
+    # UI construction, and framework conventions.
+    # ============================================================
+    - avoid_print
+    - avoid_unnecessary_containers
+    - invalid_runtime_check_with_js_interop_types
+    - no_logic_in_create_state
+    - sized_box_for_whitespace
+    - sized_box_shrink_expand
+    - sort_child_properties_last
+    - use_colored_box
+    - use_decorated_box
+    - use_full_hex_values_for_flutter_colors
+    - use_key_in_widget_constructors
+
+    # ============================================================
+    # 13. TESTING (1 rule)
+    # Test-specific lint rules.
+    # ============================================================
+    - use_test_throws_matchers
