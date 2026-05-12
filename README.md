@@ -1,7 +1,7 @@
 # Handbook for Valorant
 
 [![Version](https://img.shields.io/badge/version-2.1.1-FF4655)](https://github.com/yagizdo/handbook-for-valorant-mobile/releases)
-[![Codemagic build status](https://api.codemagic.io/apps/6a021af32b4197a14d08e2b1/6a021af32b4197a14d08e2b0/status_badge.svg)](https://codemagic.io/app/6a021af32b4197a14d08e2b1/6a021af32b4197a14d08e2b0/latest_build)
+[![Codemagic build status](https://api.codemagic.io/apps/6a021af32b4197a14d08e2b1/dev-build/status_badge.svg)](https://codemagic.io/app/6a021af32b4197a14d08e2b1/dev-build/latest_build)
 
 A community-built Flutter handbook for Valorant — browse agents, maps, weapons, weapon skins (with video previews), and competitive ranks. Powered by the public [valorant-api.com](https://valorant-api.com).
 
