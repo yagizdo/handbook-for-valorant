@@ -3,7 +3,10 @@
 [![Version](https://img.shields.io/badge/version-2.1.1-FF4655)](https://github.com/yagizdo/handbook-for-valorant-mobile/releases)
 [![Codemagic build status](https://api.codemagic.io/apps/6a021af32b4197a14d08e2b1/dev-build/status_badge.svg)](https://codemagic.io/app/6a021af32b4197a14d08e2b1/dev-build/latest_build)
 
-A community-built Flutter handbook for Valorant — browse agents, maps, weapons, weapon skins (with video previews), and competitive ranks. Powered by the public [valorant-api.com](https://valorant-api.com).
+A cross-platform Flutter mobile app providing an interactive guide to Valorant's agents, maps, weapons, skins, and competitive tiers. Architected with a modular monorepo (4 internal packages), clean layered data flow (View → Cubit → Service → Repository), and Freezed sealed-class state management for compile-time safety. Features video playback for skin previews, multi-language support, dark/light theming, and Firebase Analytics. Shipped to testers via Codemagic CI/CD.
+
+[![App Store](https://img.shields.io/badge/App%20Store-Download-0D96F6?logo=apple&logoColor=white)](https://apps.apple.com/us/app/handbook-for-valorant/id1624518737)
+![Google Play](https://img.shields.io/badge/Google%20Play-Temporarily%20Removed-grey?logo=googleplay&logoColor=white)
 
 > **Disclaimer:** This is an **unofficial fan-made application**. It is not affiliated with, endorsed by, sponsored by, or in any way officially connected to **Riot Games, Inc.**. "Valorant" and all associated trademarks, logos, characters, and assets are the property of Riot Games, Inc. All game data is sourced from the public, community-maintained [valorant-api.com](https://valorant-api.com).
 
@@ -20,7 +23,6 @@ A community-built Flutter handbook for Valorant — browse agents, maps, weapons
 - **Weapons** — Detailed weapon stats, damage tables, and full skin galleries with video previews
 - **Ranks** — Browse the competitive tier ladder
 - **Dual language** — English and Turkish, switchable at runtime
-- **Offline-friendly** — Local cache layer (cache-first with API fallback)
 - **Adaptive theming** — Light / dark mode with the Valorant brand palette
 
 ## Tech Stack
@@ -33,7 +35,6 @@ A community-built Flutter handbook for Valorant — browse agents, maps, weapons
 | Routing          | [auto_route](https://pub.dev/packages/auto_route)                                                             |
 | DI               | [get_it](https://pub.dev/packages/get_it)                                                                     |
 | HTTP             | [dio](https://pub.dev/packages/dio)                                                                           |
-| Local cache      | [objectbox](https://pub.dev/packages/objectbox)                                                               |
 | Localization     | [easy_localization](https://pub.dev/packages/easy_localization)                                               |
 | Image cache      | [cached_network_image](https://pub.dev/packages/cached_network_image)                                         |
 | Video            | [better_player_plus](https://pub.dev/packages/better_player_plus)                                             |
